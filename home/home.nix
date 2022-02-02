@@ -26,7 +26,7 @@
 
       oh-my-zsh = {
         enable = true;
-        custom = "$HOME/my-nix-config/zsh-custom";
+        custom = "$HOME/my-nix-config/home/zsh-custom";
         theme = "panda-lambda";
       };
     };
