@@ -12,6 +12,9 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # Configure boot loader
   boot.loader = {
     efi = {
@@ -27,20 +30,22 @@
     };
   };
 
-  networking.hostName = "davids-laptop";
-  networking.networkmanager.enable = true;
+  # Configure networking
+  networking = {
+    hostName = "davids-laptop";
+    networkmanager.enable = true;
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
-  networking.interfaces.wlp59s0.useDHCP = true;
+    # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+    # Per-interface useDHCP will be mandatory in the future, so this generated config
+    # replicates the default behaviour.
+    useDHCP = false;
+    interfaces.wlp59s0.useDHCP = true;
+  };
   
-  # Configure X11 and enable Plasma 5, SDDM
+  # Enable X and Plasma
   services.xserver = {
     enable = true;
     desktopManager.plasma5.enable = true;
-    # displayManager.sddm.enable = true;
     libinput.enable = true;
     layout = "us";
   };
@@ -49,9 +54,8 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   
+  # Enable bluetooth
   hardware.bluetooth.enable = true;
-
-  nixpkgs.config.allowUnfree = true;
 
   # Define user account
   users.users.david = {

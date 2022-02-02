@@ -9,12 +9,12 @@
   };
   
   home.packages = with pkgs; [
-      google-chrome
-      discord
-      zip
-      unzip
-      gnupg
-      pinentry_qt
+    google-chrome
+    discord
+    zip
+    unzip
+    gnupg
+    pinentry_qt
   ];
 
   programs = {
@@ -32,25 +32,25 @@
     };
 
     vscode = {
-        enable = true;
-        extensions = with pkgs.vscode-extensions; [
-          jnoortheen.nix-ide
-        ];
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+      ];
     };
 
     git = {
-        enable = true;
+      enable = true;
 
-        userName = "David Richey";
-        userEmail = "darichey1@gmail.com";
-        delta.enable = true;
+      userName = "David Richey";
+      userEmail = "darichey1@gmail.com";
+      delta.enable = true;
 
-        extraConfig = {
-          core.editor = "code --wait";
-          core.autocrlf = "input";
-          pull.ff = "only";
-          commit.gpgsign = true;
-        };
+      extraConfig = {
+        core.editor = "code --wait";
+        core.autocrlf = "input";
+        pull.ff = "only";
+        commit.gpgsign = true;
+      };
     };
 
     ssh.enable = true;
