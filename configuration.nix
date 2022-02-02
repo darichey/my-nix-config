@@ -27,6 +27,7 @@
     };
   };
 
+  networking.hostName = "davids-laptop";
   networking.networkmanager.enable = true;
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.

@@ -8,20 +8,17 @@
   };
 
   outputs = { home-manager, nixpkgs, ... }: {
-    nixosConfigurations = {
-      # TODO: change hostname
-      nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.david = import ./home.nix;
-          }
-        ];
-      };
+    nixosConfigurations.davids-laptop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.david = import ./home.nix;
+        }
+      ];
     };
   };
 }
