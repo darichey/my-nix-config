@@ -29,8 +29,17 @@
 
     git = {
         enable = true;
+
         userName = "David Richey";
         userEmail = "darichey1@gmail.com";
+        delta.enable = true;
+
+        extraConfig = {
+          core.editor = "code --wait";
+          core.autocrlf = "input";
+          pull.ff = "only";
+          commit.gpgsign = true;
+        };
     };
 
     ssh.enable = true;
