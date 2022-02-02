@@ -57,6 +57,10 @@
   # Enable bluetooth
   hardware.bluetooth.enable = true;
 
+  # Enable zsh. This has to be done at the system level to properly generate
+  # zshrc and make it the default shell for the user below. 
+  programs.zsh.enable = true;
+
   # Define user account
   users.users.david = {
     isNormalUser = true;
@@ -64,12 +68,6 @@
     initialPassword = "password";
     shell = pkgs.zsh;
   };
-
-  environment.systemPackages = with pkgs; [
-    zsh
-  ];
-
-  programs.zsh.enable = true;
 
   time.timeZone = "America/Chicago";
 
