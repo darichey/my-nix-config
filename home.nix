@@ -18,7 +18,18 @@
   ];
 
   programs = {
-    zsh.enable = true;
+    zsh = {
+      enable = true;
+      enableAutosuggestions = true;
+      enableCompletion = true;
+      enableSyntaxHighlighting = true;
+
+      oh-my-zsh = {
+        enable = true;
+        custom = "$HOME/my-nix-config/zsh-custom";
+        theme = "panda-lambda";
+      };
+    };
 
     vscode = {
         enable = true;
