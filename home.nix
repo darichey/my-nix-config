@@ -11,6 +11,10 @@
   home.packages = with pkgs; [
       google-chrome
       discord
+      zip
+      unzip
+      gnupg
+      pinentry_qt
   ];
 
   programs = {
@@ -29,12 +33,20 @@
         userEmail = "darichey1@gmail.com";
     };
 
+    ssh.enable = true;
+
+    gpg.enable = true;
+
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
   };
 
   services = {
-    flameshot.enable = true;   
+    flameshot.enable = true;
+    gpg-agent = {
+      enable = true;
+      pinentryFlavor = "qt";
+    };
   };
 
   # This value determines the Home Manager release that your

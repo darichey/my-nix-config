@@ -64,6 +64,8 @@
     zsh
   ];
 
+  programs.zsh.enable = true;
+
   time.timeZone = "America/Chicago";
 
   # This value determines the NixOS release from which the default
