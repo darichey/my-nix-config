@@ -15,6 +15,7 @@
     unzip
     gnupg
     pinentry_qt
+    file
   ];
 
   programs = {
