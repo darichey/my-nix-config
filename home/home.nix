@@ -16,7 +16,10 @@
     gnupg
     pinentry_qt
     file
+    neofetch
   ];
+
+  xdg.configFile."alacritty/alacritty.yml".source = ./alacritty.yaml;
 
   programs = {
     zsh = {
@@ -31,6 +34,8 @@
         theme = "panda-lambda";
       };
     };
+
+    alacritty.enable = true;
 
     vscode = {
       enable = true;
