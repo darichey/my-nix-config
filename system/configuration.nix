@@ -43,12 +43,31 @@
   };
   
   # Enable X and Plasma
+  # services.xserver = {
+  #   enable = true;
+  #   desktopManager.plasma5.enable = true;
+  #   libinput.enable = true;
+  #   layout = "us";
+  # };
+
+  services.dbus.enable = true;
   services.xserver = {
     enable = true;
-    desktopManager.plasma5.enable = true;
+    
     libinput.enable = true;
+    libinput.touchpad.naturalScrolling = true;
+
     layout = "us";
+  
+    displayManager = {
+      lightdm = {
+        enable = true;
+        greeter.enable = true;
+      };
+    };
   };
+
+  systemd.services.upower.enable = true;
 
   # Enable sound.
   sound.enable = true;
@@ -56,6 +75,7 @@
   
   # Enable bluetooth
   hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   # Enable zsh. This has to be done at the system level to properly generate
   # zshrc and make it the default shell for the user below. 

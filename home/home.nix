@@ -17,7 +17,14 @@
     pinentry_qt
     file
     neofetch
+    cabal2nix
   ];
+
+  xsession.windowManager.xmonad = {
+    enable = true;
+    enableContribAndExtras = true;
+    config = ./xmonad-config/xmonad.hs;
+  };
 
   xdg.configFile."alacritty/alacritty.yml".source = ./alacritty.yaml;
 
@@ -41,6 +48,8 @@
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
+        haskell.haskell
+        justusadam.language-haskell
       ];
     };
 
@@ -57,6 +66,12 @@
         pull.ff = "only";
         commit.gpgsign = true;
       };
+    };
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+      enableZshIntegration = true;
     };
 
     ssh.enable = true;
