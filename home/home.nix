@@ -20,10 +20,13 @@
     cabal2nix
   ];
 
-  xsession.windowManager.xmonad = {
+  xsession = {
     enable = true;
-    enableContribAndExtras = true;
-    config = ./xmonad-config/xmonad.hs;
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+      config = ./xmonad-config/xmonad.hs;
+    };
   };
 
   xdg.configFile."alacritty/alacritty.yml".source = ./alacritty.yaml;

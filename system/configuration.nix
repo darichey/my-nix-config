@@ -60,11 +60,13 @@
     layout = "us";
   
     displayManager = {
+      defaultSession = "none+xmonad";
       lightdm = {
         enable = true;
         greeter.enable = true;
       };
     };
+    windowManager.xmonad.enable = true;
   };
 
   systemd.services.upower.enable = true;
