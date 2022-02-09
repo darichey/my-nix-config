@@ -47,6 +47,8 @@
 
     alacritty.enable = true;
 
+    rofi.enable = true;
+
     vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
