@@ -39,7 +39,8 @@
     # Per-interface useDHCP will be mandatory in the future, so this generated config
     # replicates the default behaviour.
     useDHCP = false;
-    interfaces.wlp59s0.useDHCP = true;
+    interfaces.enp8s0.useDHCP = true;
+    interfaces.wlp9s0.useDHCP = true;
   };
   
   # Enable X and Plasma
