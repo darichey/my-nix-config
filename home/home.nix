@@ -18,6 +18,7 @@
     file
     neofetch
     cabal2nix
+    dig
   ];
 
   xsession = {
@@ -82,6 +83,8 @@
     ssh.enable = true;
 
     gpg.enable = true;
+
+    bat.enable = true;
 
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
