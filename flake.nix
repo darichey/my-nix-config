@@ -8,7 +8,7 @@
   };
 
   outputs = { home-manager, nixpkgs, ... }: {
-    nixosConfigurations.davids-laptop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.davids-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./system/configuration.nix

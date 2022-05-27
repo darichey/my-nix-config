@@ -32,7 +32,7 @@
 
   # Configure networking
   networking = {
-    hostName = "davids-laptop";
+    hostName = "davids-desktop";
     networkmanager.enable = true;
 
     # The global useDHCP flag is deprecated, therefore explicitly set to false here.
@@ -55,7 +55,7 @@
     enable = true;
     
     libinput.enable = true;
-    libinput.touchpad.naturalScrolling = true;
+    # libinput.touchpad.naturalScrolling = true;
 
     layout = "us";
   
@@ -69,7 +69,7 @@
     windowManager.xmonad.enable = true;
   };
 
-  systemd.services.upower.enable = true;
+  # systemd.services.upower.enable = true;
 
   # Enable sound.
   sound.enable = true;
@@ -99,5 +99,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.05"; # Did you read the comment?
+  system.stateVersion = "21.11"; # Did you read the comment?
 }
