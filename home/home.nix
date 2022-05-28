@@ -21,6 +21,7 @@
     dig
     haskell-language-server
     xorg.libX11
+    spotify
   ];
 
   xsession = {
