@@ -84,6 +84,12 @@
   # zshrc and make it the default shell for the user below. 
   programs.zsh.enable = true;
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+
   # Define user account
   users.users.david = {
     isNormalUser = true;
