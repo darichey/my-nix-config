@@ -69,6 +69,7 @@
 
     vscode = {
       enable = true;
+      mutableExtensionsDir = false;
       # Extensions in nixpkgs get out of date pretty quickly...
       # Generate this list with `./nixpkgs/pkgs/applications/editors/vscode/extensions/update_installed_exts.sh`
       # See https://nixos.wiki/wiki/Visual_Studio_Code ("Managing Extensions" section)
