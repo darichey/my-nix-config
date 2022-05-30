@@ -1,31 +1,21 @@
 { config, pkgs, ...}:
 
 {
+  # =================
+  # Misc user config
+  # =================
   home.username = "david";
   home.homeDirectory = "/home/david";
-  
   home.sessionVariables = {
       EDITOR = "code";
   };
-  
-  home.packages = with pkgs; [
-    google-chrome
-    discord
-    zip
-    unzip
-    gnupg
-    pinentry_qt
-    file
-    neofetch
-    cabal2nix
-    dig
-    haskell-language-server
-    spotify
-    parted
-  ];
 
+  # ========
+  # X config
+  # ========
   xsession = {
     enable = true;
+    # Enable xmonad and point it at config
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
@@ -33,8 +23,32 @@
     };
   };
 
+  # ===============================================================
+  # Always-present user packages
+  # Remember, per-project packages should be installed per-project!
+  # ===============================================================
+  home.packages = with pkgs; [
+    google-chrome
+    discord
+    spotify
+    
+    zip
+    unzip
+    file
+    dig
+    neofetch
+    parted
+    
+    gnupg
+    pinentry_qt
+  ];
+
+  # TODO: Convert alacritty config to a nix expression so it can be set using `programs.alacritty.settings`
   xdg.configFile."alacritty/alacritty.yml".source = ./alacritty.yaml;
 
+  # ==============
+  # Program config
+  # ==============
   programs = {
     zsh = {
       enable = true;
@@ -55,12 +69,6 @@
 
     vscode = {
       enable = true;
-      # extensions = with pkgs.vscode-extensions; [
-      #   jnoortheen.nix-ide
-      #   haskell.haskell
-      #   justusadam.language-haskell
-      # ];
-
       # Extensions in nixpkgs get out of date pretty quickly...
       # Generate this list with `./nixpkgs/pkgs/applications/editors/vscode/extensions/update_installed_exts.sh`
       # See https://nixos.wiki/wiki/Visual_Studio_Code ("Managing Extensions" section)
@@ -113,6 +121,9 @@
     home-manager.enable = true;
   };
 
+  # ==============
+  # Service config
+  # ==============
   services = {
     flameshot.enable = true;
     gpg-agent = {

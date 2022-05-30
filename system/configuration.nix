@@ -42,21 +42,15 @@
     interfaces.enp8s0.useDHCP = true;
     interfaces.wlp9s0.useDHCP = true;
   };
-  
-  # Enable X and Plasma
-  # services.xserver = {
-  #   enable = true;
-  #   desktopManager.plasma5.enable = true;
-  #   libinput.enable = true;
-  #   layout = "us";
-  # };
 
+  # Enable DBus
   services.dbus.enable = true;
+
+  # Configure X
   services.xserver = {
     enable = true;
     
     libinput.enable = true;
-    # libinput.touchpad.naturalScrolling = true;
 
     layout = "us";
   
@@ -70,9 +64,7 @@
     windowManager.xmonad.enable = true;
   };
 
-  # systemd.services.upower.enable = true;
-
-  # Enable sound.
+  # Enable sound
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   
@@ -84,11 +76,8 @@
   # zshrc and make it the default shell for the user below. 
   programs.zsh.enable = true;
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
+  # Enable Steam
+  programs.steam.enable = true;
 
   # Define user account
   users.users.david = {
