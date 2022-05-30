@@ -109,6 +109,12 @@
       };
     };
 
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+      enableZshIntegration = true;
+    };
+
     ssh.enable = true;
 
     gpg.enable = true;
