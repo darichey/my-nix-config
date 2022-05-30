@@ -44,7 +44,7 @@
 
       oh-my-zsh = {
         enable = true;
-        custom = "$HOME/my-nix-config/home/zsh-custom";
+        custom = "${./zsh-custom}";
         theme = "panda-lambda";
       };
     };
