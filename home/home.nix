@@ -20,8 +20,8 @@
     cabal2nix
     dig
     haskell-language-server
-    xorg.libX11
     spotify
+    parted
   ];
 
   xsession = {
@@ -112,6 +112,8 @@
     gpg.enable = true;
 
     bat.enable = true;
+
+    command-not-found.enable = true;
 
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
