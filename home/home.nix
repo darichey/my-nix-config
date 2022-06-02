@@ -124,6 +124,11 @@
 
     command-not-found.enable = true;
 
+    exa = {
+      enable = true;
+      enableAliases = true;
+    };
+
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
   };
