@@ -42,6 +42,7 @@
     gnupg
     pinentry_qt
     pavucontrol
+    playerctl
   ];
 
   # TODO: Convert alacritty config to a nix expression so it can be set using `programs.alacritty.settings`
@@ -155,6 +156,8 @@
       script = "polybar default &";
       config = ./polybar.ini;
     };
+
+    playerctld.enable = true;
   };
 
   # This value determines the Home Manager release that your
