@@ -3,6 +3,8 @@ import XMonad.Util.EZConfig
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Config.Desktop (desktopConfig)
 import XMonad.Hooks.ManageDocks (avoidStruts)
+import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
+import XMonad.Hooks.EwmhDesktops (ewmhFullscreen)
 
 myLayout = avoidStruts $ smartBorders $ tiled ||| Mirror tiled ||| Full
   where
@@ -21,12 +23,13 @@ myLayout = avoidStruts $ smartBorders $ tiled ||| Mirror tiled ||| Full
 myManageHook :: ManageHook
 myManageHook =
     composeAll
-      [ className =? "Pavucontrol" --> doFloat
+      [ isFullscreen               --> doFullFloat
+      , className =? "Pavucontrol" --> doFloat
       , className =? "pinentry"    --> doFloat
       ]
 
 main :: IO ()
-main = xmonad $ desktopConfig
+main = xmonad $ ewmhFullscreen $ desktopConfig
     { terminal = "alacritty"
     , layoutHook = myLayout
     , manageHook = myManageHook <+> manageHook desktopConfig
