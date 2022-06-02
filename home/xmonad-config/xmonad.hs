@@ -1,8 +1,10 @@
 import XMonad
 import XMonad.Util.EZConfig
 import XMonad.Layout.NoBorders (smartBorders)
+import XMonad.Config.Desktop (desktopConfig)
+import XMonad.Hooks.ManageDocks (avoidStruts)
 
-myLayout = smartBorders $ tiled ||| Mirror tiled ||| Full
+myLayout = avoidStruts $ smartBorders $ tiled ||| Mirror tiled ||| Full
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -16,10 +18,17 @@ myLayout = smartBorders $ tiled ||| Mirror tiled ||| Full
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
+myManageHook :: ManageHook
+myManageHook =
+    composeAll
+      [ className =? "Pavucontrol" --> doFloat
+      ]
+
 main :: IO ()
-main = xmonad $ def
+main = xmonad $ desktopConfig
     { terminal = "alacritty"
     , layoutHook = myLayout
+    , manageHook = myManageHook <+> manageHook desktopConfig
     }
     `additionalKeysP`
     [ ("M-r", spawn "rofi -show drun") -- Alt+r => Application runner

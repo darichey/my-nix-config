@@ -41,6 +41,7 @@
     
     gnupg
     pinentry_qt
+    pavucontrol
   ];
 
   # TODO: Convert alacritty config to a nix expression so it can be set using `programs.alacritty.settings`
@@ -129,6 +130,8 @@
       enableAliases = true;
     };
 
+    htop.enable = true;
+
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
   };
@@ -138,9 +141,19 @@
   # ==============
   services = {
     flameshot.enable = true;
+
     gpg-agent = {
       enable = true;
       pinentryFlavor = "qt";
+    };
+
+    polybar = {
+      enable = true;
+      package = pkgs.polybar.override {
+        pulseSupport = true;
+      };
+      script = "polybar default &";
+      config = ./polybar.ini;
     };
   };
 
