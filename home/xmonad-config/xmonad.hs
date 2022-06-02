@@ -22,6 +22,7 @@ myManageHook :: ManageHook
 myManageHook =
     composeAll
       [ className =? "Pavucontrol" --> doFloat
+      , className =? "pinentry"    --> doFloat
       ]
 
 main :: IO ()
