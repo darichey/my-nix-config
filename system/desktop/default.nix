@@ -4,6 +4,7 @@
   imports = [
     ../common.nix
     ./hardware.nix
+    ./keychron-fix.nix
   ];
 
   # Configure networking
