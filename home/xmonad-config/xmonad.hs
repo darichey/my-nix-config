@@ -50,5 +50,8 @@ main = xmonad $ ewmhFullscreen $ desktopConfig
     , ("<XF86AudioLowerVolume>", spawn "amixer sset Master 10%- unmute")
     , ("<XF86AudioMute>", spawn "amixer set Master mute")
     , ("<XF86AudioRaiseVolume>", spawn "amixer sset Master 10%+ unmute")
+    , ("<XF86AudioPrev>", spawn "playerctl previous")
+    , ("<XF86AudioPlay>", spawn "playerctl play-pause")
+    , ("<XF86AudioNext>", spawn "playerctl next")
     , ("<F12>", namedScratchpadAction myScratchPads "terminal") -- F12 => Toggle terminal scratchpad
     ]
