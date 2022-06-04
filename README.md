@@ -25,3 +25,6 @@ The /boot partition on my desktop is woefully small and sometimes runs out of sp
 * `sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +2`
 
 Also of note: if something goes wrong, pass `--install-bootloader` to `nixos-rebuild` to reinstall the bootloader.
+
+### Existing xmonad file is in the way
+Not sure why this happens, doing `rm /home/david/.xmonad/xmonad-x86_64-linux` fixes it.
