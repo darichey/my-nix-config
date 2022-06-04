@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   # Enable flakes
   nix = {
     package = pkgs.nixFlakes;
@@ -30,19 +25,6 @@
     };
   };
 
-  # Configure networking
-  networking = {
-    hostName = "davids-desktop";
-    networkmanager.enable = true;
-
-    # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-    # Per-interface useDHCP will be mandatory in the future, so this generated config
-    # replicates the default behaviour.
-    useDHCP = false;
-    interfaces.enp8s0.useDHCP = true;
-    interfaces.wlp9s0.useDHCP = true;
-  };
-
   # Enable DBus
   services.dbus.enable = true;
 
@@ -61,6 +43,7 @@
         greeter.enable = true;
       };
     };
+
     windowManager.xmonad.enable = true;
   };
 
@@ -75,9 +58,6 @@
   # Enable zsh. This has to be done at the system level to properly generate
   # zshrc and make it the default shell for the user below. 
   programs.zsh.enable = true;
-
-  # Enable Steam
-  programs.steam.enable = true;
 
   # Define user account
   users.users.david = {

@@ -13,7 +13,7 @@
     nixosConfigurations.davids-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./system/configuration.nix
+        ./system/desktop
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
