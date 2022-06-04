@@ -31,11 +31,11 @@
   # Configure X
   services.xserver = {
     enable = true;
-    
+
     libinput.enable = true;
 
     layout = "us";
-  
+
     displayManager = {
       defaultSession = "none+xmonad";
       lightdm = {
@@ -50,7 +50,7 @@
   # Enable sound
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-  
+
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;

@@ -27,12 +27,12 @@
       let
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
       in
-        pkgs.haskellPackages.developPackage {
-          root = ./home/xmonad-config;
-          returnShellEnv = true;
-          modifier = drv:
-              pkgs.haskell.lib.addBuildTools drv (with pkgs.haskellPackages;
-                [ cabal-install haskell-language-server ]);
-        };
+      pkgs.haskellPackages.developPackage {
+        root = ./home/xmonad-config;
+        returnShellEnv = true;
+        modifier = drv:
+          pkgs.haskell.lib.addBuildTools drv (with pkgs.haskellPackages;
+          [ cabal-install haskell-language-server ]);
+      };
   };
 }

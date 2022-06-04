@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
   # =================
@@ -7,7 +7,7 @@
   home.username = "david";
   home.homeDirectory = "/home/david";
   home.sessionVariables = {
-      EDITOR = "code";
+    EDITOR = "code";
   };
 
   # ========
@@ -31,14 +31,14 @@
     google-chrome
     discord
     spotify
-    
+
     zip
     unzip
     file
     dig
     neofetch
     parted
-    
+
     gnupg
     pinentry_qt
     pavucontrol
