@@ -77,6 +77,12 @@
       # See https://nixos.wiki/wiki/Visual_Studio_Code ("Managing Extensions" section)
       extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
+          name = "gitlens";
+          publisher = "eamodio";
+          version = "12.0.7";
+          sha256 = "sha256-gPhiytthf35eDhtzkSK2JZjtj4877la3hB1Cswbrszw=";
+        }
+        {
           name = "haskell";
           publisher = "haskell";
           version = "2.2.0";
