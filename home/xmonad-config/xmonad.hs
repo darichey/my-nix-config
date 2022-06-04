@@ -44,7 +44,11 @@ main = xmonad $ ewmhFullscreen $ desktopConfig
     , manageHook = myManageHook <+> manageHook desktopConfig <+> scratchpadManageHookDefault
     }
     `additionalKeysP`
+    -- https://hackage.haskell.org/package/xmonad-contrib-0.17.0/docs/XMonad-Util-EZConfig.html#v:mkKeymap
     [ ("M-r", spawn "rofi -show drun") -- Alt+r => Application runner
     , ("C-S-4", spawn "flameshot gui") -- Ctrl+Shift+4 => Area selection screenshot
+    , ("<XF86AudioLowerVolume>", spawn "amixer sset Master 10%- unmute")
+    , ("<XF86AudioMute>", spawn "amixer set Master mute")
+    , ("<XF86AudioRaiseVolume>", spawn "amixer sset Master 10%+ unmute")
     , ("<F12>", namedScratchpadAction myScratchPads "terminal") -- F12 => Toggle terminal scratchpad
     ]
