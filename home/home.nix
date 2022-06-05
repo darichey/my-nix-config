@@ -121,6 +121,7 @@
         core.autocrlf = "input";
         pull.ff = "only";
         commit.gpgsign = true;
+        init.defaultBranch = "main";
       };
     };
 
