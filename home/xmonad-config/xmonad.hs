@@ -42,6 +42,7 @@ main = xmonad $ ewmhFullscreen $ desktopConfig
     { terminal = myTerminal
     , layoutHook = myLayout
     , manageHook = myManageHook <+> manageHook desktopConfig <+> scratchpadManageHookDefault
+    , modMask = mod4Mask -- mod = "windows" key
     }
     `additionalKeysP`
     -- https://hackage.haskell.org/package/xmonad-contrib-0.17.0/docs/XMonad-Util-EZConfig.html#v:mkKeymap
