@@ -31,6 +31,7 @@
     google-chrome
     discord
     spotify
+    element-desktop
 
     zip
     unzip
