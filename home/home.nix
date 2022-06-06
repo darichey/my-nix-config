@@ -80,6 +80,7 @@
             eamodio.gitlens
             jnoortheen.nix-ide
             rust-lang.rust-analyzer
+            bungcip.better-toml
           ];
 
           # For packages that aren't in/we don't want to pull from nixpkgs (probably because they're out of date)
