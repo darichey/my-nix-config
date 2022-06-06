@@ -73,6 +73,15 @@
     vscode = {
       enable = true;
       mutableExtensionsDir = false;
+      userSettings = {
+        "editor.minimap.enabled" = false; # Disable minimap
+        "haskell.manageHLS" = "PATH"; # Don't allow haskell extension to install things
+        "files.associations" = {
+          "*.nix" = "nix"; # Associate .nix files to nix extension
+        };
+        "nix.enableLanguageServer" = true; # Enable using LSP in nix extension
+        "nix.serverPath" = pkgs.lib.getExe pkgs.rnix-lsp; # Point to rnix-lsp executable in nix store
+      };
 
       extensions =
         let
