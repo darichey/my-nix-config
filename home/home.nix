@@ -72,41 +72,43 @@
     vscode = {
       enable = true;
       mutableExtensionsDir = false;
+
+      extensions =
+        let
+          packagedExtensions = with pkgs.vscode-extensions; [
+            eamodio.gitlens
+            jnoortheen.nix-ide
+          ];
+
+          unpackagedExtensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+            # Out of date in nixpkgs
+            {
+              name = "haskell";
+              publisher = "haskell";
+              version = "2.2.0";
+              sha256 = "0qgp93m5d5kz7bxlnvlshcd8ms5ag48nk5hb37x02giqcavg4qv0";
+            }
+            # Out of date in nixpkgs
+            {
+              name = "language-haskell";
+              publisher = "justusadam";
+              version = "3.6.0";
+              sha256 = "115y86w6n2bi33g1xh6ipz92jz5797d3d00mr4k8dv5fz76d35dd";
+            }
+            # Not in nixpkgs
+            {
+              name = "intellij-idea-keybindings";
+              publisher = "k--kato";
+              version = "1.5.1";
+              sha256 = "sha256-X+q43p455J9SHBEvin1Umr4UfQVCI8vnIkoH5/vUUJs=";
+            }
+          ];
+        in
+        packagedExtensions ++ unpackagedExtensions;
+
       # Extensions in nixpkgs get out of date pretty quickly...
       # Generate this list with `./nixpkgs/pkgs/applications/editors/vscode/extensions/update_installed_exts.sh`
       # See https://nixos.wiki/wiki/Visual_Studio_Code ("Managing Extensions" section)
-      extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "gitlens";
-          publisher = "eamodio";
-          version = "12.0.7";
-          sha256 = "sha256-gPhiytthf35eDhtzkSK2JZjtj4877la3hB1Cswbrszw=";
-        }
-        {
-          name = "haskell";
-          publisher = "haskell";
-          version = "2.2.0";
-          sha256 = "0qgp93m5d5kz7bxlnvlshcd8ms5ag48nk5hb37x02giqcavg4qv0";
-        }
-        {
-          name = "nix-ide";
-          publisher = "jnoortheen";
-          version = "0.1.20";
-          sha256 = "16mmivdssjky11gmih7zp99d41m09r0ii43n17d4i6xwivagi9a3";
-        }
-        {
-          name = "language-haskell";
-          publisher = "justusadam";
-          version = "3.6.0";
-          sha256 = "115y86w6n2bi33g1xh6ipz92jz5797d3d00mr4k8dv5fz76d35dd";
-        }
-        {
-          name = "intellij-idea-keybindings";
-          publisher = "k--kato";
-          version = "1.5.1";
-          sha256 = "sha256-X+q43p455J9SHBEvin1Umr4UfQVCI8vnIkoH5/vUUJs=";
-        }
-      ];
     };
 
     git = {
