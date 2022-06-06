@@ -81,6 +81,9 @@
             jnoortheen.nix-ide
           ];
 
+          # For packages that aren't in/we don't want to pull from nixpkgs (probably because they're out of date)
+          # Can use `./nixpkgs/pkgs/applications/editors/vscode/extensions/update_installed_exts.sh` (See https://nixos.wiki/wiki/Visual_Studio_Code ("Managing Extensions" section))
+          # Or pull info from the vscode marketplace page and use pkgs.lib.fakeHash to get the hash
           unpackagedExtensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             # Out of date in nixpkgs
             {
@@ -106,10 +109,6 @@
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
-
-      # Extensions in nixpkgs get out of date pretty quickly...
-      # Generate this list with `./nixpkgs/pkgs/applications/editors/vscode/extensions/update_installed_exts.sh`
-      # See https://nixos.wiki/wiki/Visual_Studio_Code ("Managing Extensions" section)
     };
 
     git = {
