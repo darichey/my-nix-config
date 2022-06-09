@@ -20,6 +20,16 @@
           home-manager.useUserPackages = true;
           home-manager.users.david = import ./home/home.nix;
         }
+        ({ config, pkgs, ... }: {
+          nixpkgs.config.packageOverrides = pkgs: rec {
+            discord = pkgs.discord.overrideAttrs (old: {
+              src = pkgs.fetchurl {
+                url = "https://dl.discordapp.net/apps/linux/0.0.18/discord-0.0.18.tar.gz";
+                sha256 = "sha256-BBc4n6Q3xuBE13JS3gz/6EcwdOWW57NLp2saOlwOgMI=";
+              };
+            });
+          };
+        })
       ];
     };
 
