@@ -117,6 +117,12 @@
               version = "1.5.1";
               sha256 = "sha256-X+q43p455J9SHBEvin1Umr4UfQVCI8vnIkoH5/vUUJs=";
             }
+            {
+              name = "direnv";
+              publisher = "mkhl";
+              version = "0.6.1";
+              sha256 = "sha256-5/Tqpn/7byl+z2ATflgKV1+rhdqj+XMEZNbGwDmGwLQ=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
