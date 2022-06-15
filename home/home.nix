@@ -78,6 +78,7 @@
         "haskell.manageHLS" = "PATH"; # Don't allow haskell extension to install things
         "files.associations" = {
           "*.nix" = "nix"; # Associate .nix files to nix extension
+          "*.y" = "yacc";
         };
         "nix.enableLanguageServer" = true; # Enable using LSP in nix extension
         "nix.serverPath" = pkgs.lib.getExe pkgs.rnix-lsp; # Point to rnix-lsp executable in nix store
@@ -90,6 +91,7 @@
             jnoortheen.nix-ide
             rust-lang.rust-analyzer
             bungcip.better-toml
+            daohong-emilio.yash
           ];
 
           # For packages that aren't in/we don't want to pull from nixpkgs (probably because they're out of date)
