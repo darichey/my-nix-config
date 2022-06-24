@@ -33,6 +33,19 @@
       ];
     };
 
+    nixosConfigurations.davids-laptop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./system/laptop
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.david = import ./home/home.nix;
+        }
+      ];
+    };
+
     devShells."x86_64-linux".default =
       let
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
