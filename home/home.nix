@@ -92,6 +92,7 @@
             rust-lang.rust-analyzer
             bungcip.better-toml
             daohong-emilio.yash
+            ms-vscode.cpptools
           ];
 
           # For packages that aren't in/we don't want to pull from nixpkgs (probably because they're out of date)
