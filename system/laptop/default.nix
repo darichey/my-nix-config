@@ -17,4 +17,9 @@
     useDHCP = false;
     interfaces.wlp9s0.useDHCP = true;
   };
+
+  services.xserver.libinput = {
+    enable = true;
+    touchpad.naturalScrolling = true;
+  };
 }
