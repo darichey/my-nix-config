@@ -62,7 +62,7 @@
   # Define user account
   users.users.david = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "video" ];
     initialPassword = "password";
     shell = pkgs.zsh;
   };

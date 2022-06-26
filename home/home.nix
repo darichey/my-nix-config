@@ -44,6 +44,7 @@
     pinentry_qt
     pavucontrol
     playerctl
+    brightnessctl
   ];
 
   # TODO: Convert alacritty config to a nix expression so it can be set using `programs.alacritty.settings`

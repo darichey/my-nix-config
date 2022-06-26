@@ -54,5 +54,7 @@ main = xmonad $ ewmhFullscreen $ desktopConfig
     , ("<XF86AudioPrev>", spawn "playerctl previous")
     , ("<XF86AudioPlay>", spawn "playerctl play-pause")
     , ("<XF86AudioNext>", spawn "playerctl next")
+    , ("<XF86MonBrightnessUp>", spawn "brightnessctl set 10%+")
+    , ("<XF86MonBrightnessDown>", spawn "brightnessctl set 10%-")
     , ("<F12>", namedScratchpadAction myScratchPads "terminal") -- F12 => Toggle terminal scratchpad
     ]
