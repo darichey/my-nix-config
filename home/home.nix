@@ -10,6 +10,9 @@
     EDITOR = "code";
   };
 
+  # Copy wallpapers into home dir
+  home.file.".wallpapers".source = ../wallpapers;
+
   # ========
   # X config
   # ========
@@ -168,6 +171,8 @@
     };
 
     htop.enable = true;
+
+    feh.enable = true;
 
     # Let Home Manager install and manage itself.
     home-manager.enable = true;

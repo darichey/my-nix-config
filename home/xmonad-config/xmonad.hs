@@ -43,6 +43,7 @@ main = xmonad $ ewmhFullscreen $ desktopConfig
     , layoutHook = myLayout
     , manageHook = myManageHook <+> manageHook desktopConfig <+> scratchpadManageHookDefault
     , modMask = mod4Mask -- mod = "windows" key
+    , startupHook = myStartupHook
     }
     `additionalKeysP`
     -- https://hackage.haskell.org/package/xmonad-contrib-0.17.0/docs/XMonad-Util-EZConfig.html#v:mkKeymap
@@ -58,3 +59,7 @@ main = xmonad $ ewmhFullscreen $ desktopConfig
     , ("<XF86MonBrightnessDown>", spawn "brightnessctl set 10%-")
     , ("<F12>", namedScratchpadAction myScratchPads "terminal") -- F12 => Toggle terminal scratchpad
     ]
+
+myStartupHook :: X ()
+myStartupHook = do
+  spawn "feh --randomize --bg-fill ~/.wallpapers/*"
