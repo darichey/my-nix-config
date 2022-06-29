@@ -30,6 +30,8 @@ myManageHook =
       [ isFullscreen               --> doFullFloat
       , className =? "Pavucontrol" --> doFloat
       , className =? "pinentry"    --> doFloat
+      , className =? ".blueman-manager-wrapped"    --> doFloat
+      , className =? "nm-connection-editor"    --> doFloat
       , namedScratchpadManageHook myScratchPads
       ]
 

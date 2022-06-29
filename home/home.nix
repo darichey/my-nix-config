@@ -200,6 +200,10 @@
     };
 
     playerctld.enable = true;
+
+    network-manager-applet.enable = true;
+
+    blueman-applet.enable = true;
   };
 
   # This value determines the Home Manager release that your
