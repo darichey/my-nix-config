@@ -204,6 +204,8 @@
     network-manager-applet.enable = true;
 
     blueman-applet.enable = true;
+
+    dunst.enable = true;
   };
 
   # This value determines the Home Manager release that your
