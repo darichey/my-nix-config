@@ -87,6 +87,7 @@
         };
         "nix.enableLanguageServer" = true; # Enable using LSP in nix extension
         "nix.serverPath" = pkgs.lib.getExe pkgs.rnix-lsp; # Point to rnix-lsp executable in nix store
+        "workbench.editor.revealIfOpen" = true;
       };
 
       extensions =
