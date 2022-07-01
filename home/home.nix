@@ -76,8 +76,7 @@
 
     vscode = {
       enable = true;
-      # mutableExtensionsDir = false;
-      package = pkgs.vscode-fhs;
+      mutableExtensionsDir = false;
       userSettings = {
         "editor.minimap.enabled" = false; # Disable minimap
         "haskell.manageHLS" = "PATH"; # Don't allow haskell extension to install things
