@@ -35,6 +35,7 @@
     discord
     spotify
     element-desktop
+    peek
 
     zip
     unzip

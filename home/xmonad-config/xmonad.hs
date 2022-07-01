@@ -32,6 +32,7 @@ myManageHook =
       , className =? "pinentry"    --> doFloat
       , className =? ".blueman-manager-wrapped"    --> doFloat
       , className =? "nm-connection-editor"    --> doFloat
+      , className =? "Peek"    --> doFloat
       , namedScratchpadManageHook myScratchPads
       ]
 
