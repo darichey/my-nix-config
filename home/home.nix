@@ -36,6 +36,7 @@
     spotify
     element-desktop
     peek
+    slack
 
     zip
     unzip
