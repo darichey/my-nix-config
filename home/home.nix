@@ -133,6 +133,12 @@
               version = "0.6.1";
               sha256 = "sha256-5/Tqpn/7byl+z2ATflgKV1+rhdqj+XMEZNbGwDmGwLQ=";
             }
+            {
+              name = "agda-mode";
+              publisher = "banacorn";
+              version = "0.3.9";
+              sha256 = "sha256-qzpAtEDcAwE6viqW1sHc0HtW6gEtymE/gX112mhNF0c=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
