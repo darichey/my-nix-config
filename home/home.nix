@@ -75,7 +75,10 @@
 
     alacritty.enable = true;
 
-    rofi.enable = true;
+    rofi = {
+      enable = true;
+      plugins = [ pkgs.rofi-calc ];
+    };
 
     vscode = {
       enable = true;

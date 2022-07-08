@@ -61,6 +61,7 @@ main = xmonad $ ewmhFullscreen $ desktopConfig
     , ("<XF86MonBrightnessUp>", spawn "brightnessctl set 10%+")
     , ("<XF86MonBrightnessDown>", spawn "brightnessctl set 10%-")
     , ("<F12>", namedScratchpadAction myScratchPads "terminal") -- F12 => Toggle terminal scratchpad
+    , ("<F11>", spawn "rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | xclip -selection clipboard\"")
     ]
 
 myStartupHook :: X ()
