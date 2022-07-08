@@ -38,6 +38,8 @@
     peek
     slack
 
+    cachix
+
     zip
     unzip
     file
