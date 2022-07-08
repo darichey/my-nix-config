@@ -44,6 +44,7 @@
     dig
     neofetch
     parted
+    xclip
 
     gnupg
     pinentry_qt
