@@ -5,7 +5,7 @@
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
-    trustedUsers = [ "root" "david" ];
+    settings.trusted-users = [ "root" "david" ];
   };
 
   # Allow unfree packages
