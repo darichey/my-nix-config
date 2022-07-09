@@ -60,6 +60,9 @@
   # zshrc and make it the default shell for the user below. 
   programs.zsh.enable = true;
 
+  # Enable dconf for programs like blueman
+  programs.dconf.enable = true;
+
   # Define user account
   users.users.david = {
     isNormalUser = true;
