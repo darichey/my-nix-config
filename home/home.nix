@@ -53,6 +53,8 @@
     pavucontrol
     playerctl
     brightnessctl
+
+    at-spi2-core # https://github.com/NixOS/nixpkgs/issues/16327#issuecomment-303068424
   ];
 
   # TODO: Convert alacritty config to a nix expression so it can be set using `programs.alacritty.settings`
