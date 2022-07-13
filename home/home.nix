@@ -142,6 +142,12 @@
               version = "0.6.1";
               sha256 = "sha256-5/Tqpn/7byl+z2ATflgKV1+rhdqj+XMEZNbGwDmGwLQ=";
             }
+            {
+              name = "vscode-position";
+              publisher = "jtr";
+              version = "1.1.2";
+              sha256 = "sha256-8FZTC26xtFe+2ObT/2UO/qmYipszexgGTJRZNFy3qu8=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
