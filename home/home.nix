@@ -47,6 +47,7 @@
     neofetch
     parted
     xclip
+    hyperfine
 
     gnupg
     pinentry_qt
