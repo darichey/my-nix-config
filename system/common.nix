@@ -60,6 +60,9 @@
   # zshrc and make it the default shell for the user below. 
   programs.zsh.enable = true;
 
+  # Enable keybase here since I couldn't get the home manager service for it working
+  services.keybase.enable = true;
+
   # Enable dconf for programs like blueman
   programs.dconf.enable = true;
 

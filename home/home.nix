@@ -37,6 +37,9 @@
     element-desktop
     peek
     slack
+    
+    keybase
+    kbfs # needed for git-remote-keybase
 
     cachix
 
