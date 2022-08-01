@@ -152,6 +152,30 @@
               version = "1.1.2";
               sha256 = "sha256-8FZTC26xtFe+2ObT/2UO/qmYipszexgGTJRZNFy3qu8=";
             }
+            {
+              name = "language-purescript";
+              publisher = "nwolverson";
+              version = "0.2.8";
+              sha256 = "sha256-2uOwCHvnlQQM8s8n7dtvIaMgpW8ROeoUraM02rncH9o=";
+            }
+            {
+              name = "ide-purescript";
+              publisher = "nwolverson";
+              version = "0.25.12";
+              sha256 = "sha256-tgZ0PnWrSDBNKBB5bKH/Fmq6UVNSRYZ8HJdzFDgxILk=";
+            }
+            {
+              name = "dhall-lang";
+              publisher = "dhall";
+              version = "0.0.4";
+              sha256 = "sha256-7vYQ3To2hIismo9IQWRWwKsu4lXZUh0Or89WDLMmQGk=";
+            }
+            {
+              name = "vscode-dhall-lsp-server";
+              publisher = "dhall";
+              version = "0.0.4";
+              sha256 = "sha256-WopWzMCtiiLrx3pHNiDMZYFdjS359vu3T+6uI5A+Nv4=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
