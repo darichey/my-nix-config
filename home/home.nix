@@ -102,6 +102,7 @@
         "nix.serverPath" = pkgs.lib.getExe pkgs.rnix-lsp; # Point to rnix-lsp executable in nix store
         "workbench.editor.revealIfOpen" = true;
         "terminal.integrated.scrollback" = 10000;
+        "vscode-dhall-lsp-server.executable" = pkgs.lib.getExe pkgs.dhall-lsp-server;
       };
 
       extensions =
