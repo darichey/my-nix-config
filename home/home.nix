@@ -37,6 +37,7 @@
     element-desktop
     peek
     slack
+    gimp
     
     keybase
     kbfs # needed for git-remote-keybase
