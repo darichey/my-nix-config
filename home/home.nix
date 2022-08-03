@@ -103,6 +103,12 @@
         "workbench.editor.revealIfOpen" = true;
         "terminal.integrated.scrollback" = 10000;
         "vscode-dhall-lsp-server.executable" = pkgs.lib.getExe pkgs.dhall-lsp-server;
+        "tailwindCSS.includeLanguages" = {
+          "purescript" = "html";
+        };
+        "tailwindCSS.experimental.classRegex" = [
+            "twclass ['\"](.+?)['\"]"
+        ];
       };
 
       extensions =
@@ -176,6 +182,12 @@
               publisher = "dhall";
               version = "0.0.4";
               sha256 = "sha256-WopWzMCtiiLrx3pHNiDMZYFdjS359vu3T+6uI5A+Nv4=";
+            }
+            {
+              name = "vscode-tailwindcss";
+              publisher = "bradlc";
+              version = "0.8.6";
+              sha256 = "sha256-v15KuD3eYFCsrworCJ1SZAMkyZKztAwWKmfwmbirleI=";
             }
           ];
         in
