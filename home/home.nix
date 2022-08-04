@@ -110,6 +110,7 @@
         "tailwindCSS.experimental.classRegex" = [
             "twclass ['\"](.+?)['\"]"
         ];
+        "purescript.formatter" = "purs-tidy";
       };
 
       extensions =
