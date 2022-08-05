@@ -38,6 +38,8 @@
     peek
     slack
     gimp
+    obs-studio
+    vlc
     
     keybase
     kbfs # needed for git-remote-keybase
