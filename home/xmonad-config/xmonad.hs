@@ -8,6 +8,7 @@ import XMonad.Hooks.EwmhDesktops (ewmhFullscreen)
 import XMonad.Util.Scratchpad (scratchpadSpawnActionTerminal, scratchpadManageHookDefault)
 import XMonad.Util.NamedScratchpad
 import qualified XMonad.StackSet as W
+import qualified XMonad.Util.Hacks as Hacks
 
 myTerminal = "alacritty"
 
@@ -41,7 +42,7 @@ myScratchPads =
   ]
 
 main :: IO ()
-main = xmonad $ ewmhFullscreen $ desktopConfig
+main = xmonad $ Hacks.javaHack $ ewmhFullscreen $ desktopConfig
     { terminal = myTerminal
     , layoutHook = myLayout
     , manageHook = myManageHook <+> manageHook desktopConfig <+> scratchpadManageHookDefault
