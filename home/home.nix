@@ -40,6 +40,8 @@
     gimp
     obs-studio
     vlc
+    jetbrains.idea-community
+    jdk
     
     keybase
     kbfs # needed for git-remote-keybase
