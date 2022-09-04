@@ -51,7 +51,7 @@ main = xmonad $ Hacks.javaHack $ ewmhFullscreen $ desktopConfig
     }
     `additionalKeysP`
     -- https://hackage.haskell.org/package/xmonad-contrib-0.17.0/docs/XMonad-Util-EZConfig.html#v:mkKeymap
-    [ ("M-r", spawn "rofi -show drun") -- Alt+r => Application runner
+    [ ("M-r", spawn "rofi -show drun") -- Win+r => Application runner
     , ("C-S-4", spawn "flameshot gui") -- Ctrl+Shift+4 => Area selection screenshot
     , ("<XF86AudioLowerVolume>", spawn "amixer sset Master 10%- unmute")
     , ("<XF86AudioMute>", spawn "amixer set Master mute")
@@ -61,8 +61,8 @@ main = xmonad $ Hacks.javaHack $ ewmhFullscreen $ desktopConfig
     , ("<XF86AudioNext>", spawn "playerctl next")
     , ("<XF86MonBrightnessUp>", spawn "brightnessctl set 10%+")
     , ("<XF86MonBrightnessDown>", spawn "brightnessctl set 10%-")
-    , ("<F12>", namedScratchpadAction myScratchPads "terminal") -- F12 => Toggle terminal scratchpad
-    , ("<F11>", spawn "rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | xclip -selection clipboard\"")
+    , ("M-<F12>", namedScratchpadAction myScratchPads "terminal") -- Win+F12 => Toggle terminal scratchpad
+    , ("M-<F11>", spawn "rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | xclip -selection clipboard\"")
     ]
 
 myStartupHook :: X ()
