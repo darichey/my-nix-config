@@ -42,7 +42,7 @@
     vlc
     jetbrains.idea-community
     jdk
-    
+
     keybase
     kbfs # needed for git-remote-keybase
 
@@ -112,7 +112,7 @@
           "purescript" = "html";
         };
         "tailwindCSS.experimental.classRegex" = [
-            "twclass ['\"](.+?)['\"]"
+          "twclass ['\"](.+?)['\"]"
         ];
         "purescript.formatter" = "purs-tidy";
         "terminal.integrated.shellIntegration.enabled" = false; # work around https://github.com/microsoft/vscode/issues/158052
@@ -195,6 +195,12 @@
               publisher = "bradlc";
               version = "0.8.6";
               sha256 = "sha256-v15KuD3eYFCsrworCJ1SZAMkyZKztAwWKmfwmbirleI=";
+            }
+            {
+              name = "beancount";
+              publisher = "Lencerf";
+              version = "0.9.0";
+              sha256 = "sha256-rSnLvntgRgMI/8SXLCK2BfambJ0PwygrhFjxSRU4DAw=";
             }
           ];
         in
