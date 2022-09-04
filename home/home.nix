@@ -202,6 +202,12 @@
               version = "0.9.0";
               sha256 = "sha256-rSnLvntgRgMI/8SXLCK2BfambJ0PwygrhFjxSRU4DAw=";
             }
+            {
+              name = "python";
+              publisher = "ms-python";
+              version = "2022.15.12451011";
+              sha256 = "sha256-zO7L2we37bbn5i/vVhNoxUgMeY5WaPVS895wK8UbT2Q=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
