@@ -208,6 +208,12 @@
               version = "2022.15.12451011";
               sha256 = "sha256-zO7L2we37bbn5i/vVhNoxUgMeY5WaPVS895wK8UbT2Q=";
             }
+            {
+              name = "rainbow-csv";
+              publisher = "mechatroner";
+              version = "2.4.0";
+              sha256 = "sha256-zQW4Juk5+/51Xq6JsR9K645JRBm8lu6r+sgA6/IwtEU=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
