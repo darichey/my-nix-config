@@ -1,6 +1,6 @@
 import XMonad
 import XMonad.Util.EZConfig
-import XMonad.Layout.NoBorders (smartBorders)
+import XMonad.Layout.NoBorders (smartBorders, noBorders)
 import XMonad.Config.Desktop (desktopConfig)
 import XMonad.Hooks.ManageDocks (avoidStruts, docks)
 import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
@@ -17,7 +17,7 @@ import XMonad.Hooks.DynamicProperty
 
 myTerminal = "alacritty"
 
-myLayout = avoidStruts $ smartBorders $ onWorkspace "9" (Mirror tiled) $ tiled ||| Mirror tiled ||| Full
+myLayout = avoidStruts $ noBorders $ onWorkspace "9" (Mirror tiled) $ tiled ||| Mirror tiled ||| Full
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
