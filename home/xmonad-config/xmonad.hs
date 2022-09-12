@@ -2,7 +2,7 @@ import XMonad
 import XMonad.Util.EZConfig
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Config.Desktop (desktopConfig)
-import XMonad.Hooks.ManageDocks (avoidStruts)
+import XMonad.Hooks.ManageDocks (avoidStruts, docks)
 import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
 import XMonad.Hooks.EwmhDesktops (ewmhFullscreen)
 import XMonad.Util.Scratchpad (scratchpadSpawnActionTerminal, scratchpadManageHookDefault)
@@ -91,7 +91,7 @@ myStartupHook = do
 
 
 main :: IO ()
-main = xmonad $ Hacks.javaHack $ ewmhFullscreen $ desktopConfig
+main = xmonad $ Hacks.javaHack $ ewmhFullscreen $ docks $ desktopConfig
     { terminal = myTerminal
     , layoutHook = myLayout
     , manageHook = myManageHook <+> manageSpawn <+> manageHook desktopConfig <+> scratchpadManageHookDefault
