@@ -41,6 +41,35 @@ myScratchPads =
   [ NS "terminal" (myTerminal ++ " -t scratchpad") (title =? "scratchpad") defaultFloating
   ]
 
+myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
+
+myKeys =
+  -- https://hackage.haskell.org/package/xmonad-contrib-0.17.0/docs/XMonad-Util-EZConfig.html#v:mkKeymap
+  [ ("M-r", spawn "rofi -show drun") -- Win+r => Application runner
+  , ("C-S-4", spawn "flameshot gui") -- Ctrl+Shift+4 => Area selection screenshot
+  , ("<XF86AudioLowerVolume>", spawn "amixer sset Master 10%- unmute")
+  , ("<XF86AudioMute>", spawn "amixer set Master mute")
+  , ("<XF86AudioRaiseVolume>", spawn "amixer sset Master 10%+ unmute")
+  , ("<XF86AudioPrev>", spawn "playerctl previous")
+  , ("<XF86AudioPlay>", spawn "playerctl play-pause")
+  , ("<XF86AudioNext>", spawn "playerctl next")
+  , ("<XF86MonBrightnessUp>", spawn "brightnessctl set 10%+")
+  , ("<XF86MonBrightnessDown>", spawn "brightnessctl set 10%-")
+  , ("M-<F12>", namedScratchpadAction myScratchPads "terminal") -- Win+F12 => Toggle terminal scratchpad
+  , ("M-<F11>", spawn "rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | xclip -selection clipboard\"")
+  ]
+  ++
+  -- "Replacing greedyView with view" section on https://wiki.haskell.org/Xmonad/Frequently_asked_questions
+  [ (otherModMasks ++ "M-" ++ [key], action tag)
+    | (tag, key)  <- zip myWorkspaces "123456789"
+    , (otherModMasks, action) <- [ ("", windows . W.view) -- was W.greedyView
+                                    , ("S-", windows . W.shift)]
+  ]
+
+myStartupHook :: X ()
+myStartupHook = do
+  spawn "feh --randomize --bg-fill ~/.wallpapers/*"
+
 main :: IO ()
 main = xmonad $ Hacks.javaHack $ ewmhFullscreen $ desktopConfig
     { terminal = myTerminal
@@ -48,23 +77,6 @@ main = xmonad $ Hacks.javaHack $ ewmhFullscreen $ desktopConfig
     , manageHook = myManageHook <+> manageHook desktopConfig <+> scratchpadManageHookDefault
     , modMask = mod4Mask -- mod = "windows" key
     , startupHook = myStartupHook
+    , workspaces  = myWorkspaces
     }
-    `additionalKeysP`
-    -- https://hackage.haskell.org/package/xmonad-contrib-0.17.0/docs/XMonad-Util-EZConfig.html#v:mkKeymap
-    [ ("M-r", spawn "rofi -show drun") -- Win+r => Application runner
-    , ("C-S-4", spawn "flameshot gui") -- Ctrl+Shift+4 => Area selection screenshot
-    , ("<XF86AudioLowerVolume>", spawn "amixer sset Master 10%- unmute")
-    , ("<XF86AudioMute>", spawn "amixer set Master mute")
-    , ("<XF86AudioRaiseVolume>", spawn "amixer sset Master 10%+ unmute")
-    , ("<XF86AudioPrev>", spawn "playerctl previous")
-    , ("<XF86AudioPlay>", spawn "playerctl play-pause")
-    , ("<XF86AudioNext>", spawn "playerctl next")
-    , ("<XF86MonBrightnessUp>", spawn "brightnessctl set 10%+")
-    , ("<XF86MonBrightnessDown>", spawn "brightnessctl set 10%-")
-    , ("M-<F12>", namedScratchpadAction myScratchPads "terminal") -- Win+F12 => Toggle terminal scratchpad
-    , ("M-<F11>", spawn "rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | xclip -selection clipboard\"")
-    ]
-
-myStartupHook :: X ()
-myStartupHook = do
-  spawn "feh --randomize --bg-fill ~/.wallpapers/*"
+    `additionalKeysP` myKeys
