@@ -9,10 +9,15 @@ import XMonad.Util.Scratchpad (scratchpadSpawnActionTerminal, scratchpadManageHo
 import XMonad.Util.NamedScratchpad
 import qualified XMonad.StackSet as W
 import qualified XMonad.Util.Hacks as Hacks
+import XMonad.Util.SpawnOnce (spawnOnOnce, spawnOnce)
+import XMonad.Layout.PerWorkspace
+import XMonad.Actions.SpawnOn
+import XMonad.Actions.OnScreen
+import XMonad.Hooks.DynamicProperty
 
 myTerminal = "alacritty"
 
-myLayout = avoidStruts $ smartBorders $ tiled ||| Mirror tiled ||| Full
+myLayout = avoidStruts $ smartBorders $ onWorkspace "9" (Mirror tiled) $ tiled ||| Mirror tiled ||| Full
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -28,14 +33,20 @@ myLayout = avoidStruts $ smartBorders $ tiled ||| Mirror tiled ||| Full
 
 myManageHook =
     composeAll
-      [ isFullscreen               --> doFullFloat
-      , className =? "Pavucontrol" --> doFloat
-      , className =? "pinentry"    --> doFloat
-      , className =? ".blueman-manager-wrapped"    --> doFloat
-      , className =? "nm-connection-editor"    --> doFloat
-      , className =? "Peek"    --> doFloat
+      [ isFullscreen                            --> doFullFloat
+      , className =? "Pavucontrol"              --> doFloat
+      , className =? "pinentry"                 --> doFloat
+      , className =? ".blueman-manager-wrapped" --> doFloat
+      , className =? "nm-connection-editor"     --> doFloat
+      , className =? "Peek"                     --> doFloat
+      , className =? "discord"                  --> doShift "9"
       , namedScratchpadManageHook myScratchPads
       ]
+
+-- Move spotify to workspace 9
+-- Can't do this in myManageHook (like we do for discord) because spotify is bad:
+-- https://github.com/xmonad/xmonad/issues/214#issuecomment-738586824
+myHandleEventHook = dynamicPropertyChange "WM_NAME" (title =? "Spotify" --> doShift "9")
 
 myScratchPads =
   [ NS "terminal" (myTerminal ++ " -t scratchpad") (title =? "scratchpad") defaultFloating
@@ -68,15 +79,25 @@ myKeys =
 
 myStartupHook :: X ()
 myStartupHook = do
+  -- Spawn feh to pick a random wallpaper
   spawn "feh --randomize --bg-fill ~/.wallpapers/*"
+
+  -- Spawn discord and spotify. They will be moved to workspace 9 by the manage hook
+  spawnOnce "discord"
+  spawnOnce "spotify"
+
+  -- Move workspace 9 to the secondary monitor
+  windows (greedyViewOnScreen 1 "9")
+
 
 main :: IO ()
 main = xmonad $ Hacks.javaHack $ ewmhFullscreen $ desktopConfig
     { terminal = myTerminal
     , layoutHook = myLayout
-    , manageHook = myManageHook <+> manageHook desktopConfig <+> scratchpadManageHookDefault
+    , manageHook = myManageHook <+> manageSpawn <+> manageHook desktopConfig <+> scratchpadManageHookDefault
     , modMask = mod4Mask -- mod = "windows" key
     , startupHook = myStartupHook
     , workspaces  = myWorkspaces
+    , handleEventHook = myHandleEventHook
     }
     `additionalKeysP` myKeys
