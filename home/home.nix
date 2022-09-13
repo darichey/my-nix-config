@@ -214,6 +214,12 @@
               version = "2.4.0";
               sha256 = "sha256-zQW4Juk5+/51Xq6JsR9K645JRBm8lu6r+sgA6/IwtEU=";
             }
+            {
+              name = "vscode-sql-formatter";
+              publisher = "adpyke";
+              version = "1.4.4";
+              sha256 = "sha256-g4oqB0zV7jB7PeA/d2e8jKfHh+Ci+us0nK2agy1EBxs=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
