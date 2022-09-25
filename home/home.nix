@@ -42,6 +42,7 @@
     vlc
     jetbrains.idea-community
     jdk
+    xfce.thunar
 
     keybase
     kbfs # needed for git-remote-keybase
@@ -68,8 +69,17 @@
     polymc
   ];
 
-  # TODO: Convert alacritty config to a nix expression so it can be set using `programs.alacritty.settings`
-  xdg.configFile."alacritty/alacritty.yml".source = ./alacritty.yaml;
+  xdg = {
+    # TODO: Convert alacritty config to a nix expression so it can be set using `programs.alacritty.settings`
+    configFile."alacritty/alacritty.yml".source = ./alacritty.yaml;
+
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "inode/directory" = [ "thunar.desktop" ];
+      };
+    };
+  };
 
   # ==============
   # Program config
