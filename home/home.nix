@@ -232,6 +232,12 @@
               version = "1.4.4";
               sha256 = "sha256-g4oqB0zV7jB7PeA/d2e8jKfHh+Ci+us0nK2agy1EBxs=";
             }
+            {
+              name = "lalrpop-highlight";
+              publisher= "mnxn";
+              version = "0.0.1";
+              sha256 = "sha256-teyL4IGx1rtgpXsRtuBft4xlpJrtktYuCl4HaH3pm3c=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
