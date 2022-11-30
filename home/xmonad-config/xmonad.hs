@@ -39,6 +39,7 @@ myManageHook =
       , className =? ".blueman-manager-wrapped" --> doFloat
       , className =? "nm-connection-editor"     --> doFloat
       , className =? "Peek"                     --> doFloat
+      , className =? "Finance-app"              --> doFloat
       , className =? "discord"                  --> doShift "9"
       , namedScratchpadManageHook myScratchPads
       ]
