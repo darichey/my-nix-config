@@ -244,6 +244,12 @@
               version = "1.20.7";
               sha256 = "sha256-CBelVkq8yjABwU56oYlAqcAjT/N5aq/7pbLMeuULbhU=";
             }
+            {
+              name = "scala";
+              publisher= "scala-lang";
+              version = "0.5.6";
+              sha256 = "sha256-eizIPazqEb27aQ+o9nTD1O58zbjkHYHNhGjK0uJgnwA=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
