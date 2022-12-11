@@ -69,6 +69,12 @@
   # Enable dconf for programs like blueman
   programs.dconf.enable = true;
 
+  programs.thunar.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
+
   # Define user account
   users.users.david = {
     isNormalUser = true;

@@ -42,7 +42,6 @@
     vlc
     jetbrains.idea-community
     jdk
-    xfce.thunar
     comma
 
     keybase
