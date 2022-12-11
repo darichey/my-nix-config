@@ -43,6 +43,7 @@
     jetbrains.idea-community
     jdk
     xfce.thunar
+    comma
 
     keybase
     kbfs # needed for git-remote-keybase
