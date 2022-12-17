@@ -43,6 +43,7 @@
     jetbrains.idea-community
     jdk
     comma
+    gparted
 
     keybase
     kbfs # needed for git-remote-keybase
