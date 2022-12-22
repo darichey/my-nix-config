@@ -251,6 +251,12 @@
               version = "0.5.6";
               sha256 = "sha256-eizIPazqEb27aQ+o9nTD1O58zbjkHYHNhGjK0uJgnwA=";
             }
+            {
+              name = "prettier-vscode";
+              publisher= "esbenp";
+              version = "9.10.3";
+              sha256 = "sha256-BTuTTElPYRtbzQvUC3iMYlj7NDkGSDa/IppOGBXjfUM=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
