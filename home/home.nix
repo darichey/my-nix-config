@@ -129,6 +129,7 @@
         ];
         "purescript.formatter" = "purs-tidy";
         "terminal.integrated.shellIntegration.enabled" = false; # work around https://github.com/microsoft/vscode/issues/158052
+        "editor.formatOnSave" = true;
       };
 
       extensions =
