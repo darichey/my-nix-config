@@ -294,7 +294,15 @@
       enableZshIntegration = true;
     };
 
-    ssh.enable = true;
+    ssh = {
+      enable = true;
+      matchBlocks = {
+        "david-vps" = {
+          hostname = "mc.darichey.com";
+          user = "root";
+        };
+      };
+    };
 
     gpg.enable = true;
 
