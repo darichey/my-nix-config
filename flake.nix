@@ -7,9 +7,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { home-manager, nixpkgs, ... }: {
+  outputs = { home-manager, nixpkgs, agenix, ... }: {
     nixosConfigurations.davids-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -30,6 +34,7 @@
             });
           };
         })
+        agenix.nixosModule
       ];
     };
 
@@ -43,6 +48,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.david = import ./home/home.nix;
         }
+        agenix.nixosModule
       ];
     };
 
