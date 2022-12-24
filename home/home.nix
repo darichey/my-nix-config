@@ -44,6 +44,10 @@
     jdk
     comma
     gparted
+    gnome.cheese
+    guvcview
+    vlc
+    audacity
 
     keybase
     kbfs # needed for git-remote-keybase
@@ -58,6 +62,7 @@
     parted
     xclip
     hyperfine
+    usbutils
 
     gnupg
     pinentry_qt
