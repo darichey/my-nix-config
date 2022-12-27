@@ -41,7 +41,7 @@
     obs-studio
     vlc
     jetbrains.idea-community
-    jdk
+    jdk17
     comma
     gparted
     gnome.cheese
