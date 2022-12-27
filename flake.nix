@@ -24,16 +24,16 @@
           home-manager.useUserPackages = true;
           home-manager.users.david = import ./home/home.nix;
         }
-        ({ config, pkgs, ... }: {
-          nixpkgs.config.packageOverrides = pkgs: rec {
-            discord = pkgs.discord.overrideAttrs (old: {
-              src = pkgs.fetchurl {
-                url = "https://dl.discordapp.net/apps/linux/0.0.20/discord-0.0.20.tar.gz";
-                sha256 = "sha256-3f7yuxigEF3e8qhCetCHKBtV4XUHsx/iYiaCCXjspYw=";
-              };
-            });
-          };
-        })
+        # ({ config, pkgs, ... }: {
+        #   nixpkgs.config.packageOverrides = pkgs: rec {
+        #     discord = pkgs.discord.overrideAttrs (old: {
+        #       src = pkgs.fetchurl {
+        #         url = "https://dl.discordapp.net/apps/linux/0.0.20/discord-0.0.20.tar.gz";
+        #         sha256 = "sha256-3f7yuxigEF3e8qhCetCHKBtV4XUHsx/iYiaCCXjspYw=";
+        #       };
+        #     });
+        #   };
+        # })
         agenix.nixosModule
       ];
     };
