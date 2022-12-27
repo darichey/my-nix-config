@@ -24,18 +24,12 @@
   programs.steam.enable = true;
 
   services.xserver = {
-    videoDrivers = [ "amdgpu "];
-    verbose = 10;
-
-    deviceSection = ''
-      Identifier  "Device0"
-      Driver      "amdgpu"
-    '';
-
+    videoDrivers = [ "amdgpu" ];
+    
     # Multiple monitor configuration
     xrandrHeads = [
       {
-        output = "DisplayPort-1";
+        output = "DisplayPort-0";
         monitorConfig = ''
           Modeline "1920x1080_144.00"  325.080  1920 1944 1976 2056  1080 1083 1088 1098 +hsync +vsync
           Option   "PreferredMode" "1920x1080_144.00"
@@ -44,7 +38,7 @@
 
       }
       {
-        output = "DisplayPort-0";
+        output = "DisplayPort-2";
         primary = true;
         monitorConfig = ''
           Modeline "2560x1440_144.00"  808.75  2560 2792 3072 3584  1440 1443 1448 1568 -hsync +vsync
