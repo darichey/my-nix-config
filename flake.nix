@@ -34,7 +34,7 @@
         #     });
         #   };
         # })
-        agenix.nixosModule
+        agenix.nixosModules.default
       ];
     };
 
