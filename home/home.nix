@@ -138,6 +138,9 @@
           "editor.formatOnSave" = true;
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
         };
+        "[rust]" = {
+          "editor.formatOnSave" = true;
+        };
       };
 
       extensions =
