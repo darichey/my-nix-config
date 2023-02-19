@@ -141,6 +141,7 @@
         "[rust]" = {
           "editor.formatOnSave" = true;
         };
+        "rust-analyzer.checkOnSave.command" = "clippy";
       };
 
       extensions =
