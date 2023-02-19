@@ -43,7 +43,6 @@
         monitorConfig = ''
           Modeline "2560x1440_144.00"  808.75  2560 2792 3072 3584  1440 1443 1448 1568 -hsync +vsync
           Option   "PreferredMode" "2560x1440_144.00"
-          Option   "Position" "1080 300"
         '';
       }
     ];
