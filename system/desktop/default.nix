@@ -7,6 +7,8 @@
     ./keychron-fix.nix
   ];
 
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
   # Configure networking
   networking = {
     hostName = "davids-desktop";

@@ -6,6 +6,8 @@
     ./hardware.nix
   ];
 
+  boot.loader.efi.efiSysMountPoint = "/boot";
+
   # Configure networking
   networking = {
     hostName = "davids-laptop";
