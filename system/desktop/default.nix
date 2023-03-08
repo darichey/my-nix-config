@@ -18,8 +18,8 @@
     # Per-interface useDHCP will be mandatory in the future, so this generated config
     # replicates the default behaviour.
     useDHCP = false;
-    interfaces.enp8s0.useDHCP = true;
-    interfaces.wlp9s0.useDHCP = true;
+    interfaces.enp4s0.useDHCP = true;
+    interfaces.wlp5s0.useDHCP = true;
   };
 
   # Enable Steam
