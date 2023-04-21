@@ -153,39 +153,24 @@
             bungcip.better-toml
             daohong-emilio.yash
             ms-vscode.cpptools
+            haskell.haskell
+            justusadam.language-haskell
+            mkhl.direnv
+            dhall.dhall-lang
+            dhall.vscode-dhall-lsp-server
+            bradlc.vscode-tailwindcss
+            ms-python.python
+            mechatroner.rainbow-csv
+            scalameta.metals
+            scala-lang.scala
+            esbenp.prettier-vscode
+            ms-vscode-remote.remote-ssh
           ];
 
           # For packages that aren't in/we don't want to pull from nixpkgs (probably because they're out of date)
           # Can use `./nixpkgs/pkgs/applications/editors/vscode/extensions/update_installed_exts.sh` (See https://nixos.wiki/wiki/Visual_Studio_Code ("Managing Extensions" section))
           # Or pull info from the vscode marketplace page and use pkgs.lib.fakeHash to get the hash
           unpackagedExtensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-            # Out of date in nixpkgs
-            {
-              name = "haskell";
-              publisher = "haskell";
-              version = "2.2.0";
-              sha256 = "0qgp93m5d5kz7bxlnvlshcd8ms5ag48nk5hb37x02giqcavg4qv0";
-            }
-            # Out of date in nixpkgs
-            {
-              name = "language-haskell";
-              publisher = "justusadam";
-              version = "3.6.0";
-              sha256 = "115y86w6n2bi33g1xh6ipz92jz5797d3d00mr4k8dv5fz76d35dd";
-            }
-            # Not in nixpkgs
-            # {
-            #   name = "intellij-idea-keybindings";
-            #   publisher = "k--kato";
-            #   version = "1.5.1";
-            #   sha256 = "sha256-X+q43p455J9SHBEvin1Umr4UfQVCI8vnIkoH5/vUUJs=";
-            # }
-            {
-              name = "direnv";
-              publisher = "mkhl";
-              version = "0.6.1";
-              sha256 = "sha256-5/Tqpn/7byl+z2ATflgKV1+rhdqj+XMEZNbGwDmGwLQ=";
-            }
             {
               name = "vscode-position";
               publisher = "jtr";
@@ -205,40 +190,10 @@
               sha256 = "sha256-tgZ0PnWrSDBNKBB5bKH/Fmq6UVNSRYZ8HJdzFDgxILk=";
             }
             {
-              name = "dhall-lang";
-              publisher = "dhall";
-              version = "0.0.4";
-              sha256 = "sha256-7vYQ3To2hIismo9IQWRWwKsu4lXZUh0Or89WDLMmQGk=";
-            }
-            {
-              name = "vscode-dhall-lsp-server";
-              publisher = "dhall";
-              version = "0.0.4";
-              sha256 = "sha256-WopWzMCtiiLrx3pHNiDMZYFdjS359vu3T+6uI5A+Nv4=";
-            }
-            {
-              name = "vscode-tailwindcss";
-              publisher = "bradlc";
-              version = "0.8.6";
-              sha256 = "sha256-v15KuD3eYFCsrworCJ1SZAMkyZKztAwWKmfwmbirleI=";
-            }
-            {
               name = "beancount";
               publisher = "Lencerf";
               version = "0.9.0";
               sha256 = "sha256-rSnLvntgRgMI/8SXLCK2BfambJ0PwygrhFjxSRU4DAw=";
-            }
-            {
-              name = "python";
-              publisher = "ms-python";
-              version = "2022.15.12451011";
-              sha256 = "sha256-zO7L2we37bbn5i/vVhNoxUgMeY5WaPVS895wK8UbT2Q=";
-            }
-            {
-              name = "rainbow-csv";
-              publisher = "mechatroner";
-              version = "2.4.0";
-              sha256 = "sha256-zQW4Juk5+/51Xq6JsR9K645JRBm8lu6r+sgA6/IwtEU=";
             }
             {
               name = "vscode-sql-formatter";
@@ -251,30 +206,6 @@
               publisher= "mnxn";
               version = "0.0.1";
               sha256 = "sha256-teyL4IGx1rtgpXsRtuBft4xlpJrtktYuCl4HaH3pm3c=";
-            }
-            {
-              name = "metals";
-              publisher= "scalameta";
-              version = "1.20.7";
-              sha256 = "sha256-CBelVkq8yjABwU56oYlAqcAjT/N5aq/7pbLMeuULbhU=";
-            }
-            {
-              name = "scala";
-              publisher= "scala-lang";
-              version = "0.5.6";
-              sha256 = "sha256-eizIPazqEb27aQ+o9nTD1O58zbjkHYHNhGjK0uJgnwA=";
-            }
-            {
-              name = "prettier-vscode";
-              publisher= "esbenp";
-              version = "9.10.3";
-              sha256 = "sha256-BTuTTElPYRtbzQvUC3iMYlj7NDkGSDa/IppOGBXjfUM=";
-            }
-            {
-              name = "remote-ssh";
-              publisher= "ms-vscode-remote";
-              version = "0.95.2022122215";
-              sha256 = "sha256-/k6C1736tVKOyVgInumcJaujOH+R55Nl1SDHEZ+rq4A=";
             }
           ];
         in
