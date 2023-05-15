@@ -142,6 +142,7 @@
           "editor.formatOnSave" = true;
         };
         "rust-analyzer.checkOnSave.command" = "clippy";
+        "editor.linkedEditing" = true;
       };
 
       extensions =
