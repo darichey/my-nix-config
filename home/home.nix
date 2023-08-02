@@ -151,7 +151,7 @@
             eamodio.gitlens
             jnoortheen.nix-ide
             rust-lang.rust-analyzer
-            bungcip.better-toml
+            tamasfe.even-better-toml
             daohong-emilio.yash
             ms-vscode.cpptools
             haskell.haskell
