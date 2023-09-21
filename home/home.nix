@@ -65,7 +65,7 @@
     usbutils
 
     gnupg
-    pinentry_qt
+    pinentry-qt
     pavucontrol
     playerctl
     brightnessctl
@@ -122,10 +122,9 @@
           "*.y" = "yacc";
         };
         "nix.enableLanguageServer" = true; # Enable using LSP in nix extension
-        "nix.serverPath" = pkgs.lib.getExe pkgs.rnix-lsp; # Point to rnix-lsp executable in nix store
+        "nix.serverPath" = pkgs.lib.getExe' pkgs.rnix-lsp "rnix-lsp"; # Point to rnix-lsp executable in nix store
         "workbench.editor.revealIfOpen" = true;
         "terminal.integrated.scrollback" = 10000;
-        "vscode-dhall-lsp-server.executable" = pkgs.lib.getExe pkgs.dhall-lsp-server;
         "tailwindCSS.includeLanguages" = {
           "purescript" = "html";
         };
@@ -157,8 +156,6 @@
             haskell.haskell
             justusadam.language-haskell
             mkhl.direnv
-            dhall.dhall-lang
-            dhall.vscode-dhall-lsp-server
             bradlc.vscode-tailwindcss
             ms-python.python
             mechatroner.rainbow-csv
