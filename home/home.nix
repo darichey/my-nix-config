@@ -164,6 +164,7 @@
             esbenp.prettier-vscode
             ms-vscode-remote.remote-ssh
             ocamllabs.ocaml-platform
+            ms-python.python
           ];
 
           # For packages that aren't in/we don't want to pull from nixpkgs (probably because they're out of date)
