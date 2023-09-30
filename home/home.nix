@@ -34,45 +34,27 @@
     google-chrome
     discord
     spotify
-    element-desktop
     peek
-    slack
-    gimp
     obs-studio
     vlc
-    jetbrains.idea-community
-    jdk17
     comma
     gparted
-    gnome.cheese
-    guvcview
     vlc
-    audacity
-
     keybase
     kbfs # needed for git-remote-keybase
-
     cachix
-
     zip
     unzip
     file
-    dig
     neofetch
-    parted
     xclip
-    hyperfine
     usbutils
-
     gnupg
     pinentry-qt
     pavucontrol
     playerctl
     brightnessctl
-
     at-spi2-core # https://github.com/NixOS/nixpkgs/issues/16327#issuecomment-303068424
-
-    prismlauncher
   ];
 
   xdg = {
@@ -119,19 +101,11 @@
         "haskell.manageHLS" = "PATH"; # Don't allow haskell extension to install things
         "files.associations" = {
           "*.nix" = "nix"; # Associate .nix files to nix extension
-          "*.y" = "yacc";
         };
         "nix.enableLanguageServer" = true; # Enable using LSP in nix extension
         "nix.serverPath" = pkgs.lib.getExe' pkgs.rnix-lsp "rnix-lsp"; # Point to rnix-lsp executable in nix store
         "workbench.editor.revealIfOpen" = true;
         "terminal.integrated.scrollback" = 10000;
-        "tailwindCSS.includeLanguages" = {
-          "purescript" = "html";
-        };
-        "tailwindCSS.experimental.classRegex" = [
-          "twclass ['\"](.+?)['\"]"
-        ];
-        "purescript.formatter" = "purs-tidy";
         "terminal.integrated.shellIntegration.enabled" = false; # work around https://github.com/microsoft/vscode/issues/158052
         "[javascript][javascriptreact][typescript][typescriptreact][json]" = {
           "editor.formatOnSave" = true;
@@ -151,20 +125,13 @@
             jnoortheen.nix-ide
             rust-lang.rust-analyzer
             tamasfe.even-better-toml
-            daohong-emilio.yash
-            ms-vscode.cpptools
             haskell.haskell
             justusadam.language-haskell
             mkhl.direnv
             bradlc.vscode-tailwindcss
             ms-python.python
             mechatroner.rainbow-csv
-            scalameta.metals
-            scala-lang.scala
             esbenp.prettier-vscode
-            ms-vscode-remote.remote-ssh
-            ocamllabs.ocaml-platform
-            ms-python.python
           ];
 
           # For packages that aren't in/we don't want to pull from nixpkgs (probably because they're out of date)
@@ -178,28 +145,10 @@
               sha256 = "sha256-8FZTC26xtFe+2ObT/2UO/qmYipszexgGTJRZNFy3qu8=";
             }
             {
-              name = "language-purescript";
-              publisher = "nwolverson";
-              version = "0.2.8";
-              sha256 = "sha256-2uOwCHvnlQQM8s8n7dtvIaMgpW8ROeoUraM02rncH9o=";
-            }
-            {
-              name = "ide-purescript";
-              publisher = "nwolverson";
-              version = "0.25.12";
-              sha256 = "sha256-tgZ0PnWrSDBNKBB5bKH/Fmq6UVNSRYZ8HJdzFDgxILk=";
-            }
-            {
               name = "beancount";
               publisher = "Lencerf";
               version = "0.9.0";
               sha256 = "sha256-rSnLvntgRgMI/8SXLCK2BfambJ0PwygrhFjxSRU4DAw=";
-            }
-            {
-              name = "vscode-sql-formatter";
-              publisher = "adpyke";
-              version = "1.4.4";
-              sha256 = "sha256-g4oqB0zV7jB7PeA/d2e8jKfHh+Ci+us0nK2agy1EBxs=";
             }
             {
               name = "lalrpop-highlight";
