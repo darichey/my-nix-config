@@ -6,6 +6,12 @@
     package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
     settings.trusted-users = [ "root" "david" ];
+
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
+    };
   };
 
   # Allow unfree packages
