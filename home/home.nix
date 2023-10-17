@@ -156,6 +156,12 @@
               version = "0.0.1";
               sha256 = "sha256-teyL4IGx1rtgpXsRtuBft4xlpJrtktYuCl4HaH3pm3c=";
             }
+            {
+              name = "flutter";
+              publisher = "Dart-Code";
+              version = "3.74.0";
+              sha256 = "sha256-9Cp31X2kVHUDfGdSqBN8vTNtf8+5vH1MM9p1ceyUxco=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
