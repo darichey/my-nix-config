@@ -22,9 +22,6 @@
     interfaces.wlp5s0.useDHCP = true;
   };
 
-  # Enable Steam
-  programs.steam.enable = true;
-
   services.xserver = {
     videoDrivers = [ "amdgpu" ];
     
