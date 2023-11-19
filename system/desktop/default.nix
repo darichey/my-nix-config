@@ -49,4 +49,6 @@
     # Link xorg.conf for easier debugging
     exportConfiguration = true;
   };
+
+  virtualisation.libvirtd.enable = true;
 }

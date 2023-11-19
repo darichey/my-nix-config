@@ -56,6 +56,8 @@
     brightnessctl
     at-spi2-core # https://github.com/NixOS/nixpkgs/issues/16327#issuecomment-303068424
     tree
+    virt-manager
+    mesa-demos
   ];
 
   xdg = {

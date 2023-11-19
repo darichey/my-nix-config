@@ -75,7 +75,7 @@
   # Enable keybase here since I couldn't get the home manager service for it working
   services.keybase.enable = true;
 
-  # Enable dconf for programs like blueman
+  # Enable dconf for programs like blueman and virt-manager
   programs.dconf.enable = true;
 
   programs.thunar.enable = true;
@@ -87,7 +87,7 @@
   # Define user account
   users.users.david = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "libvirtd" ];
     initialPassword = "password";
     shell = pkgs.zsh;
   };
