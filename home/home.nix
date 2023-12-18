@@ -13,16 +13,87 @@
   # Copy wallpapers into home dir
   home.file.".wallpapers".source = ../wallpapers;
 
-  # ========
-  # X config
-  # ========
-  xsession = {
+  wayland.windowManager.hyprland = {
     enable = true;
-    # Enable xmonad and point it at config
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
-      config = ./xmonad-config/xmonad.hs;
+    settings = {
+      general = {
+        gaps_in = 0;
+        gaps_out = 0;
+      };
+
+      animations = {
+        enabled = false;
+      };
+
+      misc = {
+        disable_hyprland_logo = true;
+      };
+
+      monitor =
+        [
+          "DP-1,2560x1440@144,1080x300,1"
+          "DP-2,1920x1080@144,0x0,1,transform,1"
+        ];
+
+      bind =
+        [
+          "SUPER_SHIFT, Q, exit"
+          "SUPER_SHIFT, C, killactive"
+
+          "SUPER, T, exec, alacritty"
+          "SUPER, R, exec, rofi -show drun"
+          "SUPER, F, togglefloating"
+          "SUPER, S, exec, grim -g \"$(slurp -d)\" - | wl-copy"
+
+          "SUPER, 1, workspace, 1"
+          "SUPER_SHIFT, 1, movetoworkspacesilent, 1"
+          "SUPER, 2, workspace, 2"
+          "SUPER_SHIFT, 2, movetoworkspacesilent, 2"
+          "SUPER, 3, workspace, 3"
+          "SUPER_SHIFT, 3, movetoworkspacesilent, 3"
+          "SUPER, 4, workspace, 4"
+          "SUPER_SHIFT, 4, movetoworkspacesilent, 4"
+          "SUPER, 5, workspace, 5"
+          "SUPER_SHIFT, 5, movetoworkspacesilent, 5"
+          "SUPER, 6, workspace, 6"
+          "SUPER_SHIFT, 6, movetoworkspacesilent, 6"
+          "SUPER, 7, workspace, 7"
+          "SUPER_SHIFT, 7, movetoworkspacesilent, 7"
+          "SUPER, 8, workspace, 8"
+          "SUPER_SHIFT, 8, movetoworkspacesilent, 8"
+          "SUPER, 9, workspace, 9"
+          "SUPER_SHIFT, 9, movetoworkspacesilent, 9"
+          "SUPER, 0, workspace, 10"
+          "SUPER_SHIFT, 0, movetoworkspacesilent, 10"
+        ];
+
+      bindm = [
+        "SUPER,mouse:272,movewindow"
+        "SUPER,mouse:273,resizewindow"
+      ];
+
+      exec-once = [
+        "waybar"
+        "hyprpaper"
+        "[workspace 9 silent] discord"
+        "[workspace 9 silent] spotify"
+      ];
+
+      workspace = [
+        "1,monitor:DP-1"
+        "2,monitor:DP-1"
+        "3,monitor:DP-1"
+        "4,monitor:DP-1"
+        "5,monitor:DP-1"
+        "6,monitor:DP-1"
+        "7,monitor:DP-1"
+        "8,monitor:DP-1"
+        "9,monitor:DP-2"
+      ];
+
+      windowrulev2 = [
+        "workspace 9 silent,^class:(discord)$"
+      ];
     };
   };
 
@@ -47,7 +118,6 @@
     unzip
     file
     neofetch
-    xclip
     usbutils
     gnupg
     pinentry-qt
@@ -58,11 +128,19 @@
     tree
     virt-manager
     mesa-demos
+    hyprpaper
+    grim
+    slurp
+    wl-clipboard
+    nerdfonts
   ];
 
   xdg = {
     # TODO: Convert alacritty config to a nix expression so it can be set using `programs.alacritty.settings`
     configFile."alacritty/alacritty.yml".source = ./alacritty.yaml;
+
+    # TODO: https://github.com/nix-community/home-manager/issues/4632
+    configFile."hypr/hyprpaper.conf".source = ./hyprpaper.conf;
 
     mimeApps = {
       enable = true;
@@ -93,6 +171,7 @@
 
     rofi = {
       enable = true;
+      package = pkgs.rofi-wayland;
       plugins = [ pkgs.rofi-calc ];
     };
 
@@ -207,7 +286,61 @@
 
     htop.enable = true;
 
-    feh.enable = true;
+    waybar = {
+      enable = true;
+      settings = {
+        mainBar = {
+          layer = "top";
+          position = "top";
+          output = "DP-1";
+          height = 30;
+          spacing = 4;
+
+          modules-left = ["hyprland/workspaces"];
+          modules-center = ["hyprland/window"];
+          modules-right = ["tray" "idle_inhibitor" "pulseaudio" "network" "clock"];
+
+          "hyprland/workspaces" = {
+            persistent-workspaces = {
+              "DP-1" = [ 1 2 3 4 5 6 7 8 ];
+              "DP-2" = [ 9 ];
+            };
+          };
+
+          idle_inhibitor = {
+            format = "{icon}";
+            format-icons = {
+                activated = "";
+                deactivated = "";
+            };
+            tooltip-format-activated = "Idle Inhibitor: On";
+            tooltip-format-deactivated = "Idle Inhibitor: Off";
+          };
+
+          clock = {
+            format = "{:%b%e %I:%M%p}";
+          };
+
+          network = {
+            format-wifi = "{essid} ({signalStrength}%) ";
+            format-disconnected = "Disconnected ⚠";
+          };
+
+          tray = {
+            spacing = 10;
+          };
+
+          pulseaudio = {
+            format = "{volume}% {icon}";
+            format-icons = {
+              default = ["" "" ""];
+            };
+            on-click = "pavucontrol";
+          };
+        };
+      };
+      style = ./waybar.css;
+    };
 
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
@@ -217,20 +350,9 @@
   # Service config
   # ==============
   services = {
-    flameshot.enable = true;
-
     gpg-agent = {
       enable = true;
       pinentryFlavor = "qt";
-    };
-
-    polybar = {
-      enable = true;
-      package = pkgs.polybar.override {
-        pulseSupport = true;
-      };
-      script = "polybar default &";
-      config = ./polybar.ini;
     };
 
     playerctld.enable = true;
@@ -241,6 +363,8 @@
 
     dunst.enable = true;
   };
+
+  fonts.fontconfig.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

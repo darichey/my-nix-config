@@ -33,25 +33,6 @@
   # Enable DBus
   services.dbus.enable = true;
 
-  # Configure X
-  services.xserver = {
-    enable = true;
-
-    libinput.enable = true;
-
-    layout = "us";
-
-    displayManager = {
-      defaultSession = "none+xmonad";
-      lightdm = {
-        enable = true;
-        greeter.enable = true;
-      };
-    };
-
-    windowManager.xmonad.enable = true;
-  };
-
   # Enable gvfs
   services.gvfs.enable = true;
 
@@ -67,6 +48,10 @@
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+
+  services.xserver.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  programs.hyprland.enable = true;
 
   # Enable zsh. This has to be done at the system level to properly generate
   # zshrc and make it the default shell for the user below. 
