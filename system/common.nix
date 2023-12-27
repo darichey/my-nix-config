@@ -49,8 +49,15 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
+  # Note that we are using wayland, but services.xserver is named poorly: https://github.com/NixOS/nixpkgs/issues/94799
+  services.xserver = {
+    enable = true;
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      # TODO: theme = ...
+    };
+  };
   programs.hyprland.enable = true;
 
   # Enable zsh. This has to be done at the system level to properly generate
