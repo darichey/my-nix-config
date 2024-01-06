@@ -77,6 +77,7 @@
         "hyprpaper"
         "[workspace 9 silent] discord"
         "[workspace 9 silent] spotify"
+        "swayidle -w timeout 600 \"hyprctl dispatch dpms off\" resume \"hyprctl dispatch dpms on\" 2>&1 > ~/somelog.txt"
       ];
 
       workspace = [
@@ -134,6 +135,7 @@
     slurp
     wl-clipboard
     nerdfonts
+    swayidle
   ];
 
   xdg = {
