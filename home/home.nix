@@ -149,6 +149,8 @@
       enable = true;
       defaultApplications = {
         "inode/directory" = [ "thunar.desktop" ];
+        "x-scheme-handler/http" = "google-chrome.desktop";
+        "x-scheme-handler/https" = "google-chrome.desktop";
       };
     };
   };
