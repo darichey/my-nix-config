@@ -107,7 +107,6 @@
     firefox
     discord
     spotify
-    peek
     obs-studio
     vlc
     comma
