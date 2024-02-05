@@ -9,9 +9,7 @@ draw_bold_text_with_bright_colors = true
 # Background
 [colors.primary]
 background = "#232627"
-bright_background = "0x000000"
 bright_foreground = "#ffffff"
-dim_background = "#31363b"
 dim_foreground = "#eff0f1"
 foreground = "#fcfcfc"
 
