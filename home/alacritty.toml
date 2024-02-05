@@ -1,0 +1,48 @@
+[colors]
+# I actually _don't_ want bold text to use bright colors, but you have to set this to true for some reason.
+# https://github.com/alacritty/alacritty/issues/3616
+draw_bold_text_with_bright_colors = true
+
+# Colors ported from KDE Konsole's Breeze theme
+# https://github.com/KDE/konsole/blob/c1a5d942c43e8867857f2d916dc1a53539c7ad11/data/color-schemes/Breeze.colorscheme
+
+# Background
+[colors.primary]
+background = "#232627"
+bright_background = "0x000000"
+bright_foreground = "#ffffff"
+dim_background = "#31363b"
+dim_foreground = "#eff0f1"
+foreground = "#fcfcfc"
+
+[colors.normal]
+black = "#232627"
+blue = "#1d99f3"
+cyan = "#1abc9c"
+green = "#11d116"
+magenta = "#9b59b6"
+red = "#ed1515"
+white = "#fcfcfc"
+yellow = "#f67400"
+
+# "Intense" colors
+[colors.bright]
+black = "#7f8c8d"
+blue = "#3daee9"
+cyan = "#16a085"
+green = "#1cdc9a"
+magenta = "#8e44ad"
+red = "#c0392b"
+white = "#ffffff"
+yellow = "#fdbc4b"
+
+# "Faint" colors
+[colors.dim]
+black = "#31363b"
+blue = "#1b668f"
+cyan = "#186c60"
+green = "#17a262"
+magenta = "#614a73"
+red = "#783228"
+white = "#63686d"
+yellow = "#b65619"

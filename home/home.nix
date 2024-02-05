@@ -139,7 +139,7 @@
 
   xdg = {
     # TODO: Convert alacritty config to a nix expression so it can be set using `programs.alacritty.settings`
-    configFile."alacritty/alacritty.yml".source = ./alacritty.yaml;
+    configFile."alacritty/alacritty.toml".source = ./alacritty.toml;
 
     # TODO: https://github.com/nix-community/home-manager/issues/4632
     configFile."hypr/hyprpaper.conf".source = ./hyprpaper.conf;
