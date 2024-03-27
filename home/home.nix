@@ -161,7 +161,7 @@
   programs = {
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
 
@@ -182,15 +182,9 @@
 
     vscode = {
       enable = true;
-      mutableExtensionsDir = true;
+      mutableExtensionsDir = false;
       userSettings = {
         "editor.minimap.enabled" = false; # Disable minimap
-        "haskell.manageHLS" = "PATH"; # Don't allow haskell extension to install things
-        "files.associations" = {
-          "*.nix" = "nix"; # Associate .nix files to nix extension
-        };
-        "nix.enableLanguageServer" = true; # Enable using LSP in nix extension
-        "nix.serverPath" = pkgs.lib.getExe' pkgs.rnix-lsp "rnix-lsp"; # Point to rnix-lsp executable in nix store
         "workbench.editor.revealIfOpen" = true;
         "terminal.integrated.scrollback" = 10000;
         "terminal.integrated.shellIntegration.enabled" = false; # work around https://github.com/microsoft/vscode/issues/158052
@@ -212,8 +206,6 @@
             jnoortheen.nix-ide
             rust-lang.rust-analyzer
             tamasfe.even-better-toml
-            haskell.haskell
-            justusadam.language-haskell
             mkhl.direnv
             bradlc.vscode-tailwindcss
             ms-python.python
@@ -231,24 +223,6 @@
               publisher = "jtr";
               version = "1.1.2";
               sha256 = "sha256-8FZTC26xtFe+2ObT/2UO/qmYipszexgGTJRZNFy3qu8=";
-            }
-            {
-              name = "beancount";
-              publisher = "Lencerf";
-              version = "0.9.0";
-              sha256 = "sha256-rSnLvntgRgMI/8SXLCK2BfambJ0PwygrhFjxSRU4DAw=";
-            }
-            {
-              name = "lalrpop-highlight";
-              publisher= "mnxn";
-              version = "0.0.1";
-              sha256 = "sha256-teyL4IGx1rtgpXsRtuBft4xlpJrtktYuCl4HaH3pm3c=";
-            }
-            {
-              name = "flutter";
-              publisher = "Dart-Code";
-              version = "3.74.0";
-              sha256 = "sha256-9Cp31X2kVHUDfGdSqBN8vTNtf8+5vH1MM9p1ceyUxco=";
             }
             {
               name = "pdf";
@@ -291,10 +265,7 @@
 
     command-not-found.enable = true;
 
-    eza = {
-      enable = true;
-      enableAliases = true;
-    };
+    eza.enable = true;
 
     htop.enable = true;
 
@@ -364,7 +335,7 @@
   services = {
     gpg-agent = {
       enable = true;
-      pinentryFlavor = "qt";
+      pinentryPackage = pkgs.pinentry-qt;
     };
 
     playerctld.enable = true;
