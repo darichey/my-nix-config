@@ -135,6 +135,7 @@
     wl-clipboard
     nerdfonts
     swayidle
+    sidequest
   ];
 
   xdg = {
