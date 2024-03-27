@@ -250,6 +250,12 @@
               version = "3.74.0";
               sha256 = "sha256-9Cp31X2kVHUDfGdSqBN8vTNtf8+5vH1MM9p1ceyUxco=";
             }
+            {
+              name = "pdf";
+              publisher = "tomoki1207";
+              version = "1.2.2";
+              sha256 = "sha256-i3Rlizbw4RtPkiEsodRJEB3AUzoqI95ohyqZ0ksROps=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
