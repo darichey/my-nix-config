@@ -182,7 +182,7 @@
 
     vscode = {
       enable = true;
-      mutableExtensionsDir = false;
+      mutableExtensionsDir = true;
       userSettings = {
         "editor.minimap.enabled" = false; # Disable minimap
         "workbench.editor.revealIfOpen" = true;
