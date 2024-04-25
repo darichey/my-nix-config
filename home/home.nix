@@ -138,6 +138,8 @@
     swayidle
     sidequest
     polkit_gnome
+    amdgpu_top
+    jq
   ];
 
   xdg = {
@@ -283,7 +285,7 @@
 
           modules-left = ["hyprland/workspaces"];
           modules-center = ["hyprland/window"];
-          modules-right = ["tray" "idle_inhibitor" "pulseaudio" "network" "clock"];
+          modules-right = ["tray" "idle_inhibitor" "cpu" "memory" "custom/gpu" "pulseaudio" "network" "clock"];
 
           "hyprland/workspaces" = {
             persistent-workspaces = {
@@ -321,6 +323,24 @@
               default = ["" "" ""];
             };
             on-click = "pavucontrol";
+          };
+
+          cpu = {
+            interval = 10;
+            format = "CPU {}%";
+            max-length = 10;
+          };
+
+          memory = {
+            interval = 10;
+            format = "RAM {}%";
+            max-length = 10;
+          };
+
+          "custom/gpu" = {
+            exec = "amdgpu_top -d -J | jq '.[0].gpu_activity.GFX.value'";
+            format = "GPU {}%";
+            interval = 10;
           };
         };
       };

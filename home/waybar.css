@@ -51,6 +51,13 @@ button:hover {
     background-color: #2980b9;
 }
 
+#workspaces {
+    margin: 0 4px;
+}
+
+#cpu,
+#memory,
+#custom-gpu,
 #clock,
 #network,
 #pulseaudio,
@@ -60,15 +67,13 @@ button:hover {
     color: #ffffff;
 }
 
-#workspaces {
-    margin: 0 4px;
-}
-
-#clock {
-    background-color: #64727D;
-}
-
-#network {
+#cpu,
+#memory,
+#custom-gpu,
+#clock,
+#network,
+#pulseaudio,
+#idle_inhibitor {
     background-color: #64727D;
 }
 
@@ -76,8 +81,8 @@ button:hover {
     background-color: #f53c3c;
 }
 
-#pulseaudio {
-    background-color: #64727D;
+#idle_inhibitor.activated {
+    background-color: #2980b9;
 }
 
 #tray > .passive {
@@ -87,12 +92,4 @@ button:hover {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #64727D;;
-}
-
-#idle_inhibitor.activated {
-    background-color: #2980b9;
 }
