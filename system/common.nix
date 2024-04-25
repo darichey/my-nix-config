@@ -76,6 +76,8 @@
     thunar-volman
   ];
 
+  programs.steam.enable = true;
+
   # Define user account
   users.users.david = {
     isNormalUser = true;
