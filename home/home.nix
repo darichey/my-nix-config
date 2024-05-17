@@ -234,6 +234,12 @@
               version = "1.2.2";
               sha256 = "sha256-i3Rlizbw4RtPkiEsodRJEB3AUzoqI95ohyqZ0ksROps=";
             }
+            {
+              name = "godot-tools";
+              publisher = "geequlim";
+              version = "2.0.0";
+              sha256 = "sha256-6lSpx6GooZm6SfUOjooP8mHchu8w38an8Bc2tjYaVfw=";
+            }
           ];
         in
         packagedExtensions ++ unpackagedExtensions;
