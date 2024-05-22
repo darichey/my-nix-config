@@ -219,6 +219,7 @@
             esbenp.prettier-vscode
             vadimcn.vscode-lldb
             scalameta.metals
+            scala-lang.scala
           ];
 
           # For packages that aren't in/we don't want to pull from nixpkgs (probably because they're out of date)
