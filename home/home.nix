@@ -140,6 +140,8 @@
     polkit_gnome
     amdgpu_top
     jq
+    prismlauncher
+    temurin-bin-21
   ];
 
   xdg = {
