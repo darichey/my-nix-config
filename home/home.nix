@@ -220,6 +220,7 @@
             vadimcn.vscode-lldb
             scalameta.metals
             scala-lang.scala
+            ms-vscode-remote.remote-ssh
           ];
 
           # For packages that aren't in/we don't want to pull from nixpkgs (probably because they're out of date)
