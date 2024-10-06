@@ -8,6 +8,8 @@
   home.homeDirectory = "/home/david";
   home.sessionVariables = {
     EDITOR = "code";
+    NIXOS_OZONE_WL = 1;
+    HYPRCURSOR_SIZE = 48;
   };
 
   # Copy wallpapers into home dir
@@ -31,8 +33,7 @@
 
       monitor =
         [
-          "DP-1,2560x1440@144,1080x300,1"
-          "DP-2,1920x1080@144,0x0,1,transform,1"
+          "DP-1,3840x2160@160,0x0,1.5"
         ];
 
       bind =
@@ -90,7 +91,7 @@
         "6,monitor:DP-1"
         "7,monitor:DP-1"
         "8,monitor:DP-1"
-        "9,monitor:DP-2"
+        "9,monitor:DP-1"
       ];
 
       windowrulev2 = [
@@ -300,8 +301,7 @@
 
           "hyprland/workspaces" = {
             persistent-workspaces = {
-              "DP-1" = [ 1 2 3 4 5 6 7 8 ];
-              "DP-2" = [ 9 ];
+              "DP-1" = [ 1 2 3 4 5 6 7 8 9 ];
             };
           };
 
