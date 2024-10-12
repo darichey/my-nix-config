@@ -78,10 +78,18 @@
 
   programs.steam.enable = true;
 
+  programs.wireshark.enable = true;
+  programs.wireshark.package = pkgs.wireshark;
+  services.udev = {
+    extraRules = ''
+      SUBSYSTEM=="usbmon", GROUP="wireshark", MODE="0640"
+    '';
+  };
+
   # Define user account
   users.users.david = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "libvirtd" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "libvirtd" "wireshark" ];
     initialPassword = "password";
     shell = pkgs.zsh;
   };
