@@ -9,11 +9,14 @@
   home.sessionVariables = {
     EDITOR = "code";
     NIXOS_OZONE_WL = 1;
-    HYPRCURSOR_SIZE = 48;
   };
 
   # Copy wallpapers into home dir
   home.file.".wallpapers".source = ../wallpapers;
+  home.file.".local/share/icons/Catppuccin-Latte-Dark" = {
+    recursive = true;
+    source = "${pkgs.catppuccin-cursors.latteDark}/share/icons/catppuccin-latte-dark-cursors";
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -96,6 +99,12 @@
 
       windowrulev2 = [
         "workspace 9 silent,^class:(discord)$"
+      ];
+
+      env = [
+        "HYPRCURSOR_THEME,Catppuccin-Latte-Dark"
+        "HYPRCURSOR_SIZE,36"
+        "XCURSOR_SIZE,36"
       ];
     };
   };
