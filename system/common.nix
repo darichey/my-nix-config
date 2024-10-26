@@ -82,7 +82,10 @@
   programs.wireshark.package = pkgs.wireshark;
   services.udev = {
     extraRules = ''
+      # Allow wireshark to monitor usb traffic 
       SUBSYSTEM=="usbmon", GROUP="wireshark", MODE="0640"
+      # Allow everyone to read/write MSI MAG 323UPF KVM/USB hub
+      KERNEL=="hidraw*", ATTRS{idVendor}=="1462", ATTRS{idProduct}=="3fa4", MODE="0666"
     '';
   };
 
