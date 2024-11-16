@@ -216,6 +216,9 @@
             };
           };
         };
+        "github.copilot.enable" = {
+          "*" = true;
+        };
       };
 
       extensions =
