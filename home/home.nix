@@ -235,6 +235,7 @@
             scala-lang.scala
             ms-vscode-remote.remote-ssh
             github.copilot
+            tomoki1207.pdf
           ];
 
           # For packages that aren't in/we don't want to pull from nixpkgs (probably because they're out of date)
@@ -246,12 +247,6 @@
               publisher = "jtr";
               version = "1.1.2";
               sha256 = "sha256-8FZTC26xtFe+2ObT/2UO/qmYipszexgGTJRZNFy3qu8=";
-            }
-            {
-              name = "pdf";
-              publisher = "tomoki1207";
-              version = "1.2.2";
-              sha256 = "sha256-i3Rlizbw4RtPkiEsodRJEB3AUzoqI95ohyqZ0ksROps=";
             }
             {
               name = "godot-tools";
