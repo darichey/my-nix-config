@@ -219,6 +219,7 @@
         "github.copilot.enable" = {
           "*" = true;
         };
+        "github.copilot.chat.edits.enabled" = true;
       };
 
       extensions =
