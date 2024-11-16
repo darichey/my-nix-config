@@ -194,6 +194,8 @@
       enable = true;
       mutableExtensionsDir = true;
       userSettings = {
+        "window.titleBarStyle" = "custom";
+        "window.customTitleBarVisibility" = "auto";
         "editor.minimap.enabled" = false; # Disable minimap
         "workbench.editor.revealIfOpen" = true;
         "terminal.integrated.scrollback" = 10000;
