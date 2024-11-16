@@ -95,10 +95,6 @@
         "9,monitor:DP-1"
       ];
 
-      windowrulev2 = [
-        "workspace 9 silent,^class:(discord)$"
-      ];
-
       env = [
         "HYPRCURSOR_THEME,Catppuccin-Latte-Dark"
         "HYPRCURSOR_SIZE,36"
