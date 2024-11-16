@@ -238,6 +238,7 @@
             scala-lang.scala
             ms-vscode-remote.remote-ssh
             github.copilot
+            github.copilot-chat
             tomoki1207.pdf
           ];
 
