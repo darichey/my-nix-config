@@ -207,7 +207,7 @@
         "[rust]" = {
           "editor.formatOnSave" = true;
         };
-        "rust-analyzer.checkOnSave.command" = "clippy";
+        "rust-analyzer.check.command" = "clippy";
         "editor.linkedEditing" = true;
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "${pkgs.nil}/bin/nil";
