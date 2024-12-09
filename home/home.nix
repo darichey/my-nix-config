@@ -146,6 +146,7 @@
     jq
     prismlauncher
     temurin-bin-21
+    devenv
   ];
 
   xdg = {
