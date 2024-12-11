@@ -141,7 +141,6 @@
     grim
     slurp
     wl-clipboard
-    nerdfonts
     swayidle
     sidequest
     polkit_gnome
