@@ -100,6 +100,9 @@
         "HYPRCURSOR_SIZE,36"
         "XCURSOR_SIZE,36"
       ];
+
+      # https://wiki.hyprland.org/Configuring/XWayland/#hidpi-xwayland
+      xwayland.force_zero_scaling = true;
     };
   };
 
