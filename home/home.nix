@@ -226,6 +226,7 @@
           "*" = true;
         };
         "github.copilot.chat.edits.enabled" = true;
+        "chat.editing.alwaysSaveWithGeneratedChanges" = true;
       };
 
       extensions =
