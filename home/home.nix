@@ -150,6 +150,7 @@
     temurin-bin-21
     devenv
     font-awesome
+    kooha # screen recorder
   ];
 
   xdg = {
